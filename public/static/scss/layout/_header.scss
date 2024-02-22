@@ -1,0 +1,36 @@
+%flexItemCenter {
+    display: flex;
+    align-items: center;
+}
+.content {
+    display: flex;
+    padding: 40px 30px;
+}
+.top-bar {
+    @extend %flexItemCenter;
+    justify-content: space-between;
+    inset: 0 0 0 274px;
+}
+.top-list {
+    @extend %flexItemCenter;
+    gap: 32px;
+}
+.top-link {
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+.top-act {
+    &__group {
+        @extend %flexItemCenter;
+        gap: 24px;
+    }
+    &__user {
+        @extend %flexItemCenter;
+        gap: 9px;
+    }
+    &__avt {
+        width: 30px;
+        border-radius: 50%;
+    }
+}
