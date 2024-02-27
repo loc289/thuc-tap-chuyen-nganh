@@ -1,13 +1,15 @@
 <div class="nav__inner">
     <a href="#!" class="logo">
-        <img src="{{ asset('static/assets/icons/heart.svg') }}" alt="" class="logo__img" />
+        <!-- <img src="{{ asset('static/assets/icons/heart.svg') }}" alt="" class="logo__img" /> -->
+        <img src="{{ asset('static/assets/icons/logo.svg') }}" alt="" class="logo__img">
+
     </a>
 
     <!-- Nav 1 -->
     <ul class="nav flex-column nav-1">
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <img src="/icons/film.svg" alt="" class="nav-link__logo" />
+                <img src="{{ asset('static/assets/icons/film.svg') }}" alt="" class="nav-link__logo" />
                 <p>Trang chủ</p>
             </a>
         </li>

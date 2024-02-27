@@ -13,10 +13,10 @@
     <div class="top-act">
         <div class="top-act__group">
             <a href="#!" class="top-act__search">
-                <img src="./assets/icons/search.svg" alt="" />
+                <img src="{{ asset('static/assets/icons/search.svg') }}" alt="" />
             </a>
             <a href="#!" class="top-act__search">
-                <img src="./assets/icons/bell.svg" alt="" />
+                <img src="{{ asset('static/assets/icons/bell.svg') }}" alt="" />
             </a>
             <div class="top-act__user">
                 <img src="{{ asset('static/assets/imgs/avatar.jpg') }}" alt="" class="top-act__avt" />

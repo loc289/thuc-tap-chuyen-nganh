@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-5">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">Đăng nhập</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                             <label for="email"
                                 class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
@@ -69,7 +69,12 @@
                                 </a>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
+
+
+                        <a href="/login/phone" class="btn btn-primary">Đăng nhập bằng số điện thoại</a>
+                        <a href="/login/facebook" class="btn btn-primary">Đăng nhập bằng Facebook</a>
+                        <a href="/login/google" class="btn btn-primary">Đăng nhập bằng Google</a>
                     </form>
                 </div>
             </div>

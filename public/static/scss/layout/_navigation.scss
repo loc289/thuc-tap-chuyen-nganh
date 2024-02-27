@@ -1,33 +1,35 @@
 %flexItemCenter {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
+
 .nav > li > a {
-  padding: 15px 5px;
-  @extend %flexItemCenter;
+    padding: 15px 5px;
+    @extend %flexItemCenter;
 }
 .nav__inner {
-  width: 274px;
+    width: 274px;
 }
+
 .nav-1 {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 .nav-2 {
-  margin-top: 122px;
+    margin-top: 122px;
 }
 .nav-3 {
-  margin-top: 107px;
+    margin-top: 107px;
 }
 .nav-item {
 }
 .nav-link {
-  font-weight: 400;
-  &__logo {
-    margin-right: 10px;
-  }
-  &:hover {
-    background-color: transparent !important;
-    font-weight: 700;
-    color: var(--text-color);
-  }
+    font-weight: 400;
+    &__logo {
+        margin-right: 10px;
+    }
+    &:hover {
+        background-color: transparent !important;
+        font-weight: 700;
+        color: var(--text-color);
+    }
 }

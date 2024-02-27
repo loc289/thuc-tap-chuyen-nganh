@@ -25,3 +25,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// tạo route cho đăng nhập đăng kí
+Route::get('/login/facebook', 'Auth\SocialController@redirectToFacebook');
+Route::get('/login/facebook/callback', 'Auth\SocialController@handleFacebookCallback');
+
+Route::get('/login/google', 'Auth\SocialController@redirectToGoogle');
+Route::get('/login/google/callback', 'Auth\SocialController@handleGoogleCallback');
+
+Route::post('/login/phone', 'Auth\SocialController@loginPhone');

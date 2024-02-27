@@ -23,24 +23,30 @@
     <link rel="stylesheet" href="{{ asset('static/assets/css/main.css') }}">
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script>
-    $(function() {
-        $("#header").load("{{ asset('static/templates/header.blade.php') }}");
-        $("#navigation").load("{{ asset('static/templates/navigation.blade.php') }}");
-        $("#footer").load("{{ asset('static/templates/footer.blade.php') }}");
-    });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- fontawesomes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- javascript -->
+    <script src="{{ asset('static/assets/js/header.js') }}"></script>
+
+    <!-- animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Watch</title>
 </head>
 
 <body>
     <div class="content">
-        <nav id="navigation"></nav>
+        <!-- <nav id="navigation"></nav> -->
+        @include('templates.navigation.logOutNavigation')
         <div class="container">
-            <header id="header"></header>
+            @include('templates.header.loggOutHeader')
 
-            <footer id="footer"></footer>
+            @include('templates.footer.footer')
+
         </div>
     </div>
 </body>
