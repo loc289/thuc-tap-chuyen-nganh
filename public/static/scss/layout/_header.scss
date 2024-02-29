@@ -1,3 +1,8 @@
+.container {
+    --grid-gutter-x: 0px;
+    --grid-gutter-y: 0px;
+}
+
 %flexItemCenter {
     display: flex;
     align-items: center;
@@ -10,14 +15,18 @@
 }
 .content {
     display: flex;
-    padding: 40px 30px;
 }
+
 .banner {
     background-image: url("/static/assets/imgs/banner.png");
     width: 100%; /* Đặt chiều rộng tùy ý */
     height: 455px; /* Đặt chiều cao tùy ý */
     object-fit: contain;
     border-image: fill 0 linear-gradient(to bottom, transparent, #111111b6);
+    padding: 40px 30px;
+    &_inner {
+        margin-top: 152px;
+    }
 }
 .top-bar {
     @extend %flexItemCenter;
@@ -50,20 +59,21 @@
     .dropdown {
         position: relative;
         display: inline-block;
-
         &-toggle {
             cursor: pointer;
         }
 
         &-menu {
-            display: none;
+            display: block;
             position: absolute;
             top: 100%;
-            left: -50%;
+            left: -165px;
             background-color: #fff;
             min-width: 160px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             animation-duration: 1.25s;
+            &::before {
+            }
         }
 
         &:hover .dropdown-menu {
@@ -78,5 +88,11 @@
     }
     &-movie-info {
         font-size: 1.4rem;
+        margin-top: 28px;
+    }
+    &-action {
+        display: flex;
+        margin-top: 50px;
+        gap: 20px;
     }
 }

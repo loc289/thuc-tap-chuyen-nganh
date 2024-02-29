@@ -37,8 +37,8 @@
         <p class="primary-movie-info">Thông tin phim</p>
         <div class="primary-action">
             <a href="#!" class="primary-watch"><img src="{{ asset('static/assets/button/watch-now.svg') }}" alt=""></a>
-            <a href="#!" class="primary-save">
-                <img src="{{ asset('static/assets/button/like.svg') }}" class="" alt="">
+            <a href="#!" class="primary-save" id="likeButton">
+                <img src="{{ asset('static/assets/button/like.svg') }}" class="likeImage" alt="">
             </a>
         </div>
     </div>

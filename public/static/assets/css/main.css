@@ -1207,6 +1207,11 @@ select {
   color: inherit;
 }
 
+.container {
+  --grid-gutter-x: 0px;
+  --grid-gutter-y: 0px;
+}
+
 .top-act__user, .top-act__group, .top-list, .top-bar {
   display: flex;
   align-items: center;
@@ -1220,7 +1225,6 @@ select {
 
 .content {
   display: flex;
-  padding: 40px 30px;
 }
 
 .banner {
@@ -1229,6 +1233,10 @@ select {
   height: 455px; /* Đặt chiều cao tùy ý */
   object-fit: contain;
   border-image: fill 0 linear-gradient(to bottom, transparent, rgba(17, 17, 17, 0.7137254902));
+  padding: 40px 30px;
+}
+.banner_inner {
+  margin-top: 152px;
 }
 
 .top-bar {
@@ -1263,10 +1271,10 @@ select {
   cursor: pointer;
 }
 .top-act .dropdown-menu {
-  display: none;
+  display: block;
   position: absolute;
   top: 100%;
-  left: -50%;
+  left: -165px;
   background-color: #fff;
   min-width: 160px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -1282,6 +1290,12 @@ select {
 }
 .primary-movie-info {
   font-size: 1.4rem;
+  margin-top: 28px;
+}
+.primary-action {
+  display: flex;
+  margin-top: 50px;
+  gap: 20px;
 }
 
 .nav > li > a {
@@ -1295,6 +1309,7 @@ select {
 
 .nav__inner {
   width: 274px;
+  padding: 40px 30px;
 }
 
 .nav-1 {
