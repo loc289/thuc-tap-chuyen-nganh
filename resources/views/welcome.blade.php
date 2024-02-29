@@ -45,6 +45,13 @@
         <div class="container">
             @include('templates.header.loggOutHeader')
 
+
+            <!-- Content -->
+            <main>
+
+            </main>
+
+
             @include('templates.footer.footer')
 
         </div>
