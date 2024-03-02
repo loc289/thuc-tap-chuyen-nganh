@@ -42,16 +42,15 @@
         <!-- <nav id="navigation"></nav> -->
         @include('templates.navigation.logOutNavigation')
         <div class="container">
-            @include('templates.header.loggOutHeader')
+            <div class="container__inner">
+                @include('templates.header.loggOutHeader')
+            </div>
 
-
-            <!-- Content -->
-            <main>
-
-            </main>
-
+            <!-- Main-Content -->
+            @include('layouts.main')
 
             @include('templates.footer.footer')
+
 
         </div>
     </div>

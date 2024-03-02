@@ -1,6 +1,8 @@
 .container {
     --grid-gutter-x: 0px;
     --grid-gutter-y: 0px;
+    &__inner {
+    }
 }
 
 %flexItemCenter {
@@ -18,12 +20,13 @@
 }
 
 .banner {
+    position: relative;
+    padding: 40px 30px;
     background-image: url("/static/assets/imgs/banner.png");
     width: 100%; /* Đặt chiều rộng tùy ý */
     height: 455px; /* Đặt chiều cao tùy ý */
     object-fit: contain;
     border-image: fill 0 linear-gradient(to bottom, transparent, #111111b6);
-    padding: 40px 30px;
     &_inner {
         margin-top: 152px;
     }
@@ -55,44 +58,19 @@
         width: 30px;
         border-radius: 50%;
     }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-        &-toggle {
-            cursor: pointer;
-        }
-
-        &-menu {
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: -165px;
-            background-color: #fff;
-            min-width: 160px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            animation-duration: 1.25s;
-            &::before {
-            }
-        }
-
-        &:hover .dropdown-menu {
-            display: block;
-        }
-    }
 }
 .primary {
     &-movie-name {
         font-size: 4.8rem;
-        font-weight: 500;
+        font-weight: 600;
     }
     &-movie-info {
         font-size: 1.4rem;
-        margin-top: 28px;
+        margin-top: 20px;
     }
     &-action {
         display: flex;
-        margin-top: 50px;
+        margin-top: 36px;
         gap: 20px;
     }
 }

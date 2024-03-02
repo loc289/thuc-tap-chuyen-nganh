@@ -1,0 +1,21 @@
+.feature {
+    overflow: hidden;
+
+    &-heading {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+}
+.carousel {
+    display: flex;
+    gap: 24px;
+    overflow: hidden;
+    width: auto;
+    .movie-item > img {
+        width: 255px;
+        height: 301px;
+        border-radius: 20px;
+        border: 1px solid #969696;
+        object-fit: cover;
+    }
+}

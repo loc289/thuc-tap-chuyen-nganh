@@ -1207,11 +1207,43 @@ select {
   color: inherit;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-toggle {
+  cursor: pointer;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -165px;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  animation-duration: 1.25s;
+  padding: 0;
+}
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  border: 11px solid;
+  border-color: transparent transparent #fff transparent;
+  right: 0px;
+}
+.dropdown-menu > li > a {
+  padding: 12px 20px;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .container {
   --grid-gutter-x: 0px;
   --grid-gutter-y: 0px;
 }
-
 .top-act__user, .top-act__group, .top-list, .top-bar {
   display: flex;
   align-items: center;
@@ -1228,12 +1260,13 @@ select {
 }
 
 .banner {
+  position: relative;
+  padding: 40px 30px;
   background-image: url("/static/assets/imgs/banner.png");
   width: 100%; /* Đặt chiều rộng tùy ý */
   height: 455px; /* Đặt chiều cao tùy ý */
   object-fit: contain;
   border-image: fill 0 linear-gradient(to bottom, transparent, rgba(17, 17, 17, 0.7137254902));
-  padding: 40px 30px;
 }
 .banner_inner {
   margin-top: 152px;
@@ -1263,38 +1296,18 @@ select {
   width: 30px;
   border-radius: 50%;
 }
-.top-act .dropdown {
-  position: relative;
-  display: inline-block;
-}
-.top-act .dropdown-toggle {
-  cursor: pointer;
-}
-.top-act .dropdown-menu {
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: -165px;
-  background-color: #fff;
-  min-width: 160px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  animation-duration: 1.25s;
-}
-.top-act .dropdown:hover .dropdown-menu {
-  display: block;
-}
 
 .primary-movie-name {
   font-size: 4.8rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .primary-movie-info {
   font-size: 1.4rem;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 .primary-action {
   display: flex;
-  margin-top: 50px;
+  margin-top: 36px;
   gap: 20px;
 }
 
@@ -1308,7 +1321,7 @@ select {
 }
 
 .nav__inner {
-  width: 274px;
+  min-width: 274px;
   padding: 40px 30px;
 }
 
@@ -1334,6 +1347,28 @@ select {
   background-color: transparent !important;
   font-weight: 700;
   color: var(--text-color);
+}
+
+.feature {
+  overflow: hidden;
+}
+.feature-heading {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.carousel {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  width: auto;
+}
+.carousel .movie-item > img {
+  width: 255px;
+  height: 301px;
+  border-radius: 20px;
+  border: 1px solid #969696;
+  object-fit: cover;
 }
 
 html {
