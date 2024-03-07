@@ -42,9 +42,7 @@
         <!-- <nav id="navigation"></nav> -->
         @include('templates.navigation.logOutNavigation')
         <div class="container">
-            <div class="container__inner">
-                @include('templates.header.loggOutHeader')
-            </div>
+            @include('templates.header.loggOutHeader')
 
             <!-- Main-Content -->
             @include('layouts.main')

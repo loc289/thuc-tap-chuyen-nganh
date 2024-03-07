@@ -9,7 +9,7 @@ html {
 body {
     background-color: var(--bg-color);
     font-size: 1.6rem;
-    font-family: Poppins;
+    font-family: "DVN-Poppins";
     color: var(--text-color);
 }
 a {
@@ -28,4 +28,10 @@ input,
 select {
     font-family: inherit;
     color: inherit;
+}
+.mt-32 {
+    margin-top: 32px;
+}
+.row::before {
+    content: none;
 }
