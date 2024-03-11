@@ -53,7 +53,7 @@
         </div>
     </div>
     <!-- javascript -->
-    <script src="{{ asset('static/assets/js/header.js') }}"></script>
+    <script defer src="{{ asset('static/assets/js/header.js') }}"></script>
 </body>
 
 </html>

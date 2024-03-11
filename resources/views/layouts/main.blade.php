@@ -158,13 +158,13 @@
             </div>
     </section>
 
-
+    <!-- Dành cho bạn -->
     <section class="feature mt-32">
         <h2 class="feature-heading">Dành cho bạn</h2>
         <div class="carousel row">
             <div class="col-lg-1">
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-1.jpg" alt="Movie 1" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-1.jpg" alt="Movie 1" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -173,7 +173,7 @@
             </div>
             <div class="col-lg-1">
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-2.jpg" alt="Movie 2" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-2.jpg" alt="Movie 2" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -182,7 +182,7 @@
             </div>
             <div class="col-lg-1">
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-3.jpg" alt="Movie 3" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-3.jpg" alt="Movie 3" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -191,17 +191,7 @@
             </div>
             <div class="col-lg-1">
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
-
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -211,7 +201,7 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-6.jpg" alt="Movie 6" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -221,7 +211,7 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-1.jpg" alt="Movie 1" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-6.jpg" alt="Movie 6" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -231,7 +221,7 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-2.jpg" alt="Movie 2" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-1.jpg" alt="Movie 1" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -241,16 +231,7 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-3.jpg" alt="Movie 3" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-2.jpg" alt="Movie 2" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -260,7 +241,16 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
+                    <im loading="lazy" g src="./static/assets/imgs/movie-3.jpg" alt="Movie 3" />
+                    <div class="movie-info">
+                        <h3 class="movie__heading">Movie Name</h3>
+                        <p class="movie__desc">Time</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <div class="movie-item">
+                    <img loading="lazy" src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -270,7 +260,7 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-4.jpg" alt="Movie 6" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -280,16 +270,7 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-4.jpg" alt="Movie 6" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -299,7 +280,16 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-6.jpg" alt="Movie 6" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
+                    <div class="movie-info">
+                        <h3 class="movie__heading">Movie Name</h3>
+                        <p class="movie__desc">Time</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <div class="movie-item">
+                    <img loading="lazy" src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>
@@ -309,7 +299,17 @@
             <div class="col-lg-1">
 
                 <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
+                    <img loading="lazy" src="./static/assets/imgs/movie-6.jpg" alt="Movie 6" />
+                    <div class="movie-info">
+                        <h3 class="movie__heading">Movie Name</h3>
+                        <p class="movie__desc">Time</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+
+                <div class="movie-item">
+                    <img loading="lazy" src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
                     <div class="movie-info">
                         <h3 class="movie__heading">Movie Name</h3>
                         <p class="movie__desc">Time</p>

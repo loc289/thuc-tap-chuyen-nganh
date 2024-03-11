@@ -1275,7 +1275,7 @@ select {
 .banner {
   position: relative;
   padding: 40px 30px;
-  background-image: url("/static/assets/imgs/banner.png");
+  background-image: url("/static/assets/imgs/banner.webp");
   background-repeat: no-repeat;
   width: 100%; /* Đặt chiều rộng tùy ý */
   height: 455px; /* Đặt chiều cao tùy ý */
