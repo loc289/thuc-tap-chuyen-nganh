@@ -17,7 +17,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('static/assets/fonts/stylesheet.css') }}" />
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" /> -->
 
     <!-- Css -->
     <link rel="stylesheet" href="{{ asset('static/assets/css/main.css') }}">
@@ -39,21 +39,17 @@
 
 <body>
     <div class="content">
-        <!-- <nav id="navigation"></nav> -->
         @include('templates.navigation.logOutNavigation')
         <div class="container">
             @include('templates.header.loggOutHeader')
-
             <!-- Main-Content -->
-            @include('layouts.main')
-
-            @include('templates.footer.footer')
-
-
+            @yield('content')
         </div>
     </div>
+    <!-- Footer -->
+    @include('templates.footer.footer')
     <!-- javascript -->
-    <script defer src="{{ asset('static/assets/js/header.js') }}"></script>
+    <script src="{{ asset('static/assets/js/header.js') }}"></script>
 </body>
 
 </html>
