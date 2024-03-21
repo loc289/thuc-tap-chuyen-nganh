@@ -8,24 +8,26 @@
     &-menu {
         display: none;
         position: absolute;
-        top: 100%;
+        top: 130%;
         left: -165px;
         background-color: var(--dropdown-bg-color);
         min-width: 160px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         animation-duration: 1.25s;
         padding: 0;
+        color: #000;
         &::before {
             content: "";
             position: absolute;
-            top: -15px;
-            border: 11px solid;
-            border-color: transparent transparent var(--dropdown-border-color)
+            top: -23px;
+            border: 16px solid;
+            border-color: transparent transparent var(--dropdown-bg-color)
                 transparent;
             right: 0px;
         }
         & > li > a {
             padding: 12px 20px;
+            font-size: 1.4rem;
         }
     }
 

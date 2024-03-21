@@ -46,10 +46,14 @@
             @yield('content')
         </div>
     </div>
+
+
+
     <!-- Footer -->
     @include('templates.footer.footer')
     <!-- javascript -->
     <script src="{{ asset('static/assets/js/header.js') }}"></script>
+    <script src="{{ asset('static/assets/js/change-header.js') }}"></script>
 </body>
 
 </html>
