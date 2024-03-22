@@ -1,5 +1,4 @@
-$gutter-main-1: 32px;
-$gutter-main-2: 40px;
+$margin-main: 32px;
 
 %flexItemCenter {
     display: flex;
@@ -38,7 +37,7 @@ $gutter-main-2: 40px;
     &_inner {
         position: absolute;
         bottom: 53px;
-        margin-left: $gutter-main-1;
+        margin-left: $margin-main;
     }
     &-main {
         width: 100%;
@@ -48,8 +47,8 @@ $gutter-main-2: 40px;
 .top-bar {
     @extend %flexItemCenter;
     justify-content: space-between;
-    margin-left: $gutter-main-1;
-    margin-right: $gutter-main-1;
+    margin-left: $margin-main;
+    margin-right: $margin-main;
 }
 .top-list {
     @extend %flexItemCenter;

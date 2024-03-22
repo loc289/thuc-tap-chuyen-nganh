@@ -19,13 +19,13 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('trending') }}">
                 <img src="./static/assets/icons/trending.svg" alt="" class="nav-link__logo" />
                 <p>Thịnh hành</p>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('comming') }}">
                 <img src="./static/assets/icons/calendar.svg" alt="" class="nav-link__logo" />
                 <p>Sắp ra mắt</p>
             </a>
@@ -35,7 +35,7 @@
     <!-- Nav 2 -->
     <ul class="nav flex-column nav-2">
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('movie') }}">
                 <img src="./static/assets/icons/user.svg" alt="" class="nav-link__logo" />
                 Community
             </a>
