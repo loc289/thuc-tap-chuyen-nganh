@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
-    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('static/assets/favicon/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('static/assets/favicon') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('static/assets/favicon/favicon-16x16.png') }}" />
+    <link rel="manifest" href="{{ asset('static/assets/favicon/site.webmanifest') }}" />
+    <link rel="mask-icon" href="{{ asset('static/assets/favicon/safari-pinned-tab.svg') }}" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
@@ -30,8 +30,6 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
     <!-- animation -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Watch</title>
@@ -39,15 +37,22 @@
 
 <body>
     <div class="content">
-        @include('templates.navigation.logOutNavigation')
+        @auth
+        @include('templates.navigation.logInNavigation')
         <div class="container">
-            @include('templates.header.loggOutHeader')
-            <!-- Main-Content -->
+            @include('templates.header.logInHeader')
+            <!-- Main-Content for logged in users -->
             @yield('content')
         </div>
+        @elseguest
+        @include('templates.navigation.logOutNavigation')
+        <div class="container">
+            @include('templates.header.logOutHeader')
+            <!-- Main-Content for guests -->
+            @yield('content')
+        </div>
+        @endauth
     </div>
-
-
 
     <!-- Footer -->
     @include('templates.footer.footer')
