@@ -17,7 +17,8 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('static/assets/fonts/stylesheet.css') }}" />
     <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Css -->
     <link rel="stylesheet" href="{{ asset('static/assets/css/main.css') }}">
@@ -57,6 +58,10 @@
     <!-- Footer -->
     @include('templates.footer.footer')
     <!-- javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
     <script src="{{ asset('static/assets/js/header.js') }}"></script>
     <script src="{{ asset('static/assets/js/change-header.js') }}"></script>
 </body>

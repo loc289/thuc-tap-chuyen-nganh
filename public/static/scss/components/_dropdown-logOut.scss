@@ -4,7 +4,9 @@
     &-toggle {
         cursor: pointer;
     }
-
+    &-toggle::after {
+        content: none;
+    }
     &-menu {
         display: none;
         position: absolute;

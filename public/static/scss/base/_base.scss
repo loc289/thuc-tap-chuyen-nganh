@@ -11,6 +11,7 @@ body {
     font-size: 1.6rem;
     font-family: "DVN-Poppins";
     color: var(--text-color);
+    scroll-behavior: smooth;
 }
 a {
     display: inline-block;
@@ -37,4 +38,12 @@ select {
 }
 .mt-header {
     margin-top: 82px;
+}
+@media (min-width: 1400px) {
+    .container {
+        --bs-gutter-x: 0;
+        max-width: 1250px;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
