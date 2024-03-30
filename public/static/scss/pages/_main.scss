@@ -14,18 +14,18 @@
         font-weight: 600;
     }
 }
-.carousel {
-    display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    column-gap: 24px;
-    margin-top: 16px;
-    white-space: nowrap;
-}
+// .carousel {
+//     display: grid;
+//     grid-template-columns: repeat(16, 1fr);
+//     column-gap: 24px;
+//     margin-top: 16px;
+//     white-space: nowrap;
+// }
 .movie {
     &-item {
         position: relative;
 
-        & > img {
+        &__img {
             width: 255px;
             height: 301px;
             border-radius: 20px;

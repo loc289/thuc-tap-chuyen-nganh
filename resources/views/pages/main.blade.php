@@ -4,216 +4,227 @@
 <main class="main-content">
     <section class="feature">
         <h2 class="feature-heading">Thịnh hành</h2>
-        <div class="carousel row">
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-1.jpg" alt="Movie 1" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+        <div class="carousel row swiper-container swiper">
+            <!-- Swiper Wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Các Swiper Slides -->
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-2.jpg" alt="Movie 2" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-3.jpg" alt="Movie 3" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
 
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
 
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-6.jpg" alt="Movie 6" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
 
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-1.jpg" alt="Movie 1" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
 
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-2.jpg" alt="Movie 2" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
-
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-3.jpg" alt="Movie 3" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-1">
-
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-6.jpg" alt="Movie 6" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
-
-                <div class="movie-item">
-                    <img src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Nếu cần Pagination -->
+                <!-- Nếu cần Navigation Buttons -->
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
     </section>
 
     <!-- Dành cho bạn -->
     <section class="feature mt-32">
         <h2 class="feature-heading">Dành cho bạn</h2>
-        <div class="carousel row">
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-1.jpg" alt="Movie 1" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+        <div class="carousel row swiper-container swiper">
+            <!-- Swiper Wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Các Swiper Slides -->
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-2.jpg" alt="Movie 2" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-3.jpg" alt="Movie 3" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1">
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="movie-item">
+                        <a href="/path-to-movie-detail" class="movie-link">
+                            <img src="./static/assets/imgs/movie-2.jpg" alt="Tên phim" class="movie-item__img"
+                                loading="lazy" />
+                            <div class="movie-info">
+                                <h3 class="movie__heading">Movie Name</h3>
+                                <p class="movie__desc">120 min</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
             </div>
-            <div class="col-lg-1">
-
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-6.jpg" alt="Movie 6" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-1">
-
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-5.jpg" alt="Movie 5" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
-
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-6.jpg" alt="Movie 6" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-1">
-
-                <div class="movie-item">
-                    <img loading="lazy" src="./static/assets/imgs/movie-4.jpg" alt="Movie 4" />
-                    <div class="movie-info">
-                        <h3 class="movie__heading">Movie Name</h3>
-                        <p class="movie__desc">Time</p>
-                    </div>
-                </div>
-            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </section>
 </main>
 @endsection
