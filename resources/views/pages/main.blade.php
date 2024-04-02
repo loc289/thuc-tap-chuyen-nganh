@@ -120,13 +120,11 @@
                         </a>
                     </div>
                 </div>
-                <!-- Nếu cần Pagination -->
                 <!-- Nếu cần Navigation Buttons -->
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
-
     </section>
 
     <!-- Dành cho bạn -->

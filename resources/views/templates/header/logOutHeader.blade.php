@@ -13,9 +13,16 @@
             </ul>
             <div class="top-act">
                 <div class="top-act__group">
-                    <a href="#!" class="top-act__search">
-                        <img src="./static/assets/icons/search.svg" alt="" />
+                    <!-- Button kích hoạt thanh tìm kiếm -->
+                    <a href="#!" class="top-act__search" id="searchToggle">
+                        <img src="./static/assets/icons/search.svg" alt="Search" />
                     </a>
+                    <!-- Thanh tìm kiếm ẩn -->
+                    <div id="searchBar" class="search-container" style="display: none;">
+                        <input type=" text" id="searchInput" placeholder="Nhập nội dung tìm kiếm..." />
+                        <button id="searchButton"> <img src="./static/assets/icons/search.svg" /></button>
+                    </div>
+
                     <a href="#!" class="top-act__noti">
                         <img src="./static/assets/icons/bell.svg" alt="" />
                     </a>

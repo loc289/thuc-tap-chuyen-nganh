@@ -1,32 +1,31 @@
-const dropdown = document.querySelector(".dropdown");
+document.addEventListener("DOMContentLoaded", (event) => {
+    const dropdown = document.querySelector(".dropdown");
 
-dropdown.addEventListener("mouseenter", () => {
-  dropdown.querySelector(".dropdown-menu").style.display = "block";
-});
+    if (dropdown) {
+        const dropdownMenu = dropdown.querySelector(".dropdown-menu");
 
-dropdown.addEventListener("mouseleave", () => {
-  dropdown.querySelector(".dropdown-menu").style.display = "none";
-});
+        dropdown.addEventListener("mouseenter", () => {
+            dropdownMenu.classList.add("show");
+        });
 
-// Like btn
-document.getElementById("likeButton").addEventListener("click", function () {
-  var likeImage = document.querySelector(".likeImage");
+        dropdown.addEventListener("mouseleave", () => {
+            dropdownMenu.classList.remove("show");
+        });
+    }
 
-  // Check if the current image is 'like.svg', then toggle to 'liked.svg' and vice versa
-  if (likeImage.src.includes("like.svg")) {
-    likeImage.src = "static/assets/button/liked.svg";
-  } else {
-    likeImage.src = "static/assets/button/like.svg";
-  }
-});
+    const likeButton = document.getElementById("likeButton");
+    if (likeButton) {
+        const likeImage = document.querySelector(".likeImage");
 
-// Swiper
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 4,
-  slidesPerGroup: 6,
-  spaceBetween: 20,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+        likeButton.addEventListener("click", function () {
+            if (likeImage) {
+                likeImage.classList.toggle("liked");
+                if (likeImage.classList.contains("liked")) {
+                    likeImage.src = "static/assets/button/liked.svg";
+                } else {
+                    likeImage.src = "static/assets/button/like.svg";
+                }
+            }
+        });
+    }
 });
