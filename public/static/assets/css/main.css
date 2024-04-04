@@ -147,7 +147,7 @@ html {
 body {
   background-color: var(--bg-color);
   font-size: 1.6rem;
-  font-family: "DVN-Poppins";
+  font-family: "Roboto";
   color: var(--text-color);
   scroll-behavior: smooth;
 }
@@ -192,6 +192,28 @@ select {
     margin-right: 0;
   }
 }
+/* Cách tiếp cận chung cho hầu hết các trình duyệt */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s; /* Tránh trình duyệt thay đổi màu nền ngay lập tức */
+  -webkit-text-fill-color: #000 !important; /* Ví dụ màu chữ bạn muốn */
+  background-color: var(--text-color) !important; /* Ví dụ màu nền bạn muốn */
+  border-color: #000 !important; /* Ví dụ màu viền bạn muốn */
+}
+
+html {
+  --text-color: #fff;
+  --bg-color: #23201d;
+  --nav-shadow: rgba(97, 0, 194, 0.4);
+  --dropdown-bg-color: #fff;
+  --dropdown-hover-color: #f0f0f0;
+  --dropdown-border-color: #ddd;
+  --border-footer: #626260;
+  --color-link-footer: #acacac;
+}
+
 .container {
   --grid-gutter-x: 0;
   --grid-gutter-y: 0;
@@ -339,6 +361,67 @@ select {
   display: block;
 }
 
+.login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+}
+.login__form {
+  width: 30%;
+}
+.login__title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.login__content {
+  margin-top: 20px;
+  display: grid;
+  row-gap: 15px;
+}
+.login__box {
+  position: relative;
+}
+.login__input {
+  width: 100%;
+  padding: 1rem 1.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+.login__label {
+  position: absolute;
+  left: 0;
+  color: #ddd;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 17px;
+  user-select: none;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+.login__eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.login__input:focus {
+  border: 1px solid #6a5af9;
+}
+.login__input:focus + .login__label {
+  top: 0;
+  left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #fff;
+  color: #6a5af9;
+}
+
 .swiper {
   margin-top: 16px;
 }
@@ -422,12 +505,10 @@ select {
 
 .search-container {
   position: relative;
-  transition: width 0.5s ease-in-out;
-  display: block;
-  width: 300px; /* Đặt chiều rộng ban đầu là 0 */
+  width: 300px;
   overflow: hidden;
 }
-.search-container > input {
+.search-container > .searchInput {
   border: 1px solid rgb(169, 170, 173);
   box-shadow: none;
   border-radius: 0.5rem;
@@ -440,13 +521,13 @@ select {
   padding: 0px 1.5rem;
   transition: border 400ms ease 0s;
 }
-.search-container > button {
+.search-container > .searchButton {
   position: absolute;
   right: 4px;
   transform: translateY(-50%);
   top: 52%;
 }
-.search-container > button > img {
+.search-container > .searchButton > img {
   width: 22px;
 }
 
@@ -548,17 +629,6 @@ select {
 }
 .footer__link:hover {
   color: var(--text-color);
-}
-
-html {
-  --text-color: #fff;
-  --bg-color: #23201d;
-  --nav-shadow: rgba(97, 0, 194, 0.4);
-  --dropdown-bg-color: #fff;
-  --dropdown-hover-color: #f0f0f0;
-  --dropdown-border-color: #ddd;
-  --border-footer: #626260;
-  --color-link-footer: #acacac;
 }
 
 /*# sourceMappingURL=main.css.map */

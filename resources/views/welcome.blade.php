@@ -45,18 +45,21 @@
         @include('templates.navigation.logInNavigation')
         <div class="container">
             @include('templates.header.logInHeader')
-            <!-- Main-Content for logged in users -->
+            <!-- Main-Content for logged-in users -->
             @yield('content')
         </div>
-        @elseguest
+        @else
+        @guest
         @include('templates.navigation.logOutNavigation')
         <div class="container">
             @include('templates.header.logOutHeader')
             <!-- Main-Content for guests -->
             @yield('content')
         </div>
+        @endguest
         @endauth
     </div>
+
 
     <!-- Footer -->
     @include('templates.footer.footer')

@@ -18,6 +18,8 @@ Route::namespace('App\Http\Controllers')->group(function () {
     
 });
 
+// Người dùng sau khi đăng nhập sẽ hiện ra giao diện đăng nhâp
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
  
 Auth::routes();

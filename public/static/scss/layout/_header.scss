@@ -77,14 +77,10 @@ $margin-main: 32px;
 
 .search-container {
     position: relative;
-    transition: width 0.5s ease-in-out;
-    display: block;
-    width: 300px; /* Đặt chiều rộng ban đầu là 0 */
+    width: 300px;
     overflow: hidden;
-    // &.show {
-    //     width: 300px;
-    // }
-    & > input {
+
+    & > .searchInput {
         border: 1px solid rgb(169, 170, 173);
         box-shadow: none;
         border-radius: 0.5rem;
@@ -97,7 +93,7 @@ $margin-main: 32px;
         padding: 0px 1.5rem;
         transition: border 400ms ease 0s;
     }
-    & > button {
+    & > .searchButton {
         position: absolute;
         right: 4px;
         transform: translateY(-50%);

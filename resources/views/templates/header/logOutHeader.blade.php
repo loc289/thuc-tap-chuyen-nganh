@@ -19,8 +19,10 @@
                     </a>
                     <!-- Thanh tìm kiếm ẩn -->
                     <div id="searchBar" class="search-container" style="display: none;">
-                        <input type=" text" id="searchInput" placeholder="Nhập nội dung tìm kiếm..." />
-                        <button id="searchButton"> <img src="./static/assets/icons/search.svg" /></button>
+                        <input class="searchInput" type=" text" id="searchInput"
+                            placeholder="Nhập nội dung tìm kiếm..." />
+                        <button class="searchButton" id="searchButton"> <img
+                                src="./static/assets/icons/search.svg" /></button>
                     </div>
 
                     <a href="#!" class="top-act__noti">
