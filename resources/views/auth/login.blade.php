@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @section('content')
-<div class="login">
+<div class="login" data-bg="{{ asset('static/assets/imgs/bg-login.webp') }}">
+
     <form autocomplete="off" action="{{ route('login') }}" method="POST" class="login__form">
         @csrf
         <!-- Token CSRF để bảo mật -->
-        <h1 class="login__title">Đăng nhập</h1>
+        <h1 class="login__title">Login</h1>
 
         <div class="login__content">
             <!-- Box Nhập Số Điện Thoại -->
@@ -25,7 +26,7 @@
         <!-- Checkbox Ghi Nhớ Tài Khoản -->
         <div class="login__check">
             <div class="login__check-group">
-                <input type="checkbox" name="remember" class="login__check-input" id="login-check">
+                <input type="checkbox" id="switch" /><label class="toggle" for="switch">Toggle</label>
                 <label for="login-check" class="login__check-label">Remember me</label>
             </div>
 
@@ -35,6 +36,11 @@
 
         <!-- Nút Đăng Nhập -->
         <button type="submit" class="login__button">Login</button>
+        <div class="login__line"></div>
+        <a href="#!" class="login__button login__google">
+            <img src="{{ asset('static/assets/icons/google.svg') }}" class="google-link" alt="">
+            Or sign in with Google</a>
+
 
         <!-- Liên kết Đăng Ký Tài Khoản Mới -->
         <p class="login__register">

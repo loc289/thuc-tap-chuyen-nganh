@@ -32,6 +32,7 @@
     <!-- animation -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Css -->
+    <link rel="preload" as="image" href="{{ asset('static/assets/imgs/bg-login.webp') }}">
     <link rel="stylesheet" href="{{ asset('static/assets/css/main.css') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -40,9 +41,16 @@
 </head>
 
 
-
 <body>
+    <style>
+    body {
+        background-image: url('{{ asset('static/assets/imgs/bg-login.webp') }}');
+        background-position: bottom 30% left 34%;
+    }
+    </style>
+
     @yield('content')
+
 </body>
 
 </html>

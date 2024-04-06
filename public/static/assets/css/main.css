@@ -337,7 +337,7 @@ html {
   display: none;
   position: absolute;
   top: 130%;
-  left: -165px;
+  left: -149px;
   background-color: var(--dropdown-bg-color);
   min-width: 160px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -348,10 +348,10 @@ html {
 .dropdown-menu::before {
   content: "";
   position: absolute;
-  top: -23px;
-  border: 16px solid;
+  top: -19px;
+  border: 12.5px solid;
   border-color: transparent transparent var(--dropdown-bg-color) transparent;
-  right: 0px;
+  right: 1px;
 }
 .dropdown-menu > li > a {
   padding: 12px 20px;
@@ -361,16 +361,23 @@ html {
   display: block;
 }
 
+.login__register, .login__google, .login__check-group, .login__check {
+  display: flex;
+  align-items: center;
+}
+
 .login {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
   color: #000;
 }
 .login__form {
-  width: 30%;
+  width: 450px;
+  height: auto;
+  background: #fff;
+  padding: 50px;
 }
 .login__title {
   font-size: 3.2rem;
@@ -378,7 +385,7 @@ html {
   text-align: center;
 }
 .login__content {
-  margin-top: 20px;
+  margin-top: 50px;
   display: grid;
   row-gap: 15px;
 }
@@ -387,14 +394,14 @@ html {
 }
 .login__input {
   width: 100%;
-  padding: 1rem 1.8rem;
+  padding: 1.4rem 1.8rem;
   border-radius: 8px;
   border: 1px solid #ddd;
   outline: none;
 }
 .login__label {
   position: absolute;
-  left: 0;
+  left: 0px;
   color: #ddd;
   top: 50%;
   transform: translateY(-50%);
@@ -409,17 +416,108 @@ html {
   top: 50%;
   transform: translateY(-50%);
 }
+.login__check {
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.login__check-label {
+  margin-left: 10px;
+}
+.login__check-label, .login__forgot {
+  font-size: 1.4rem;
+  line-height: 1.66;
+  letter-spacing: 0.3px;
+}
+.login__forgot {
+  color: #6a5af9;
+}
+.login__button {
+  background: #6a5af9;
+  color: var(--text-color);
+  width: 100%;
+  border-radius: 8px;
+  height: 4rem;
+  margin-top: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.login__google {
+  background-color: #333;
+  border-radius: 8px;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 400;
+}
+.login__line {
+  height: 0.5px;
+  width: 100%;
+  background-color: #e5e5e5;
+  margin-top: 2.5rem;
+}
+.login__register {
+  font-size: 1.4rem;
+  line-height: 20px; /* 166.667% */
+  letter-spacing: 0.3px;
+  justify-content: center;
+  gap: 5px;
+  height: 6rem;
+}
+.login__register > a {
+  color: #6a5af9;
+}
 
 .login__input:focus {
   border: 1px solid #6a5af9;
 }
 .login__input:focus + .login__label {
   top: 0;
-  left: 10px;
+  left: 15px;
   padding-left: 10px;
   padding-right: 10px;
   background: #fff;
   color: #6a5af9;
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 35px;
+  height: 20px;
+  background: grey;
+  display: block;
+  border-radius: 10px;
+  position: relative;
+}
+
+.toggle:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+input:checked + .toggle {
+  background: #6a5af9;
+}
+
+input:checked + .toggle:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.toggle:active:after {
+  width: 25px;
 }
 
 .swiper {

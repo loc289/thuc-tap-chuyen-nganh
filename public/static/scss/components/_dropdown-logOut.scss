@@ -11,7 +11,7 @@
         display: none;
         position: absolute;
         top: 130%;
-        left: -165px;
+        left: -149px;
         background-color: var(--dropdown-bg-color);
         min-width: 160px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -21,11 +21,11 @@
         &::before {
             content: "";
             position: absolute;
-            top: -23px;
-            border: 16px solid;
+            top: -19px;
+            border: 12.5px solid;
             border-color: transparent transparent var(--dropdown-bg-color)
                 transparent;
-            right: 0px;
+            right: 1px;
         }
         & > li > a {
             padding: 12px 20px;
