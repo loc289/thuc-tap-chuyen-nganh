@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="{{ asset('static/assets/css/main.css') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Watch') }}</title>
 
 </head>
 

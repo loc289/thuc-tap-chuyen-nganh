@@ -37,7 +37,7 @@
         <!-- Nút Đăng Nhập -->
         <button type="submit" class="login__button">Login</button>
         <div class="login__line"></div>
-        <a href="#!" class="login__button login__google">
+        <a href="{{url('login/google')}}" class="login__button login__google">
             <img src="{{ asset('static/assets/icons/google.svg') }}" class="google-link" alt="">
             Or sign in with Google</a>
 

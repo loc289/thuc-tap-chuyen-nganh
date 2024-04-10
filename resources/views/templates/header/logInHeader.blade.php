@@ -1,25 +1,31 @@
-<div class="banner">
+<header class="header">
     <div class="top-bar">
-
-        <!-- Top banner -->
         <ul class="top-list">
             <li>
-                <a class="top-link" href="#!">Movies</a>
+                <a class="top-link" href="#!">Quốc gia</a>
             </li>
             <li>
-                <a class="top-link" href="#!">Series</a>
+                <a class="top-link" href="#!">Phim lẻ</a>
             </li>
             <li>
-                <a class="top-link" href="#!">Documentaries</a>
+                <a class="top-link" href="#!">Phim bộ</a>
             </li>
         </ul>
         <div class="top-act">
             <div class="top-act__group">
-                <a href="#!" class="top-act__search">
-                    <img src="{{ asset('static/assets/icons/search.svg') }}" alt="" />
+                <!-- Button kích hoạt thanh tìm kiếm -->
+                <a href="#!" class="top-act__search" id="searchToggle">
+                    <img src="./static/assets/icons/search.svg" alt="Search" />
                 </a>
-                <a href="#!" class="top-act__search">
-                    <img src="{{ asset('static/assets/icons/bell.svg') }}" alt="" />
+                <!-- Thanh tìm kiếm ẩn -->
+                <div id="searchBar" class="search-container" style="display: none;">
+                    <input class="searchInput" type=" text" id="searchInput" placeholder="Nhập nội dung tìm kiếm..." />
+                    <button class="searchButton" id="searchButton"> <img
+                            src="./static/assets/icons/search.svg" /></button>
+                </div>
+
+                <a href="#!" class="top-act__noti">
+                    <img src="./static/assets/icons/bell.svg" alt="" />
                 </a>
                 <div class="top-act__user">
                     <img src="{{ asset('static/assets/imgs/avatar.jpg') }}" alt="" class="top-act__avt" />
@@ -28,17 +34,4 @@
             </div>
         </div>
     </div>
-    <div class="banner_inner">
-        <h1 class="primary-movie-name">Tên phim</h1>
-        <p class="primary-movie-info">Thông tin phim</p>
-        <div class="primary-action">
-            <a href="#!" class="primary-watch">Watch now</a>
-            <a href="#!" class="primary-save">
-                <img src="{{ asset('static/assets/icons/favorite.svg') }}" alt="">
-            </a>
-        </div>
-    </div>
-
-
-
-</div>
+</header>

@@ -220,8 +220,8 @@
                 </div>
 
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev btn-arrow btn-arrow-left"></div>
+            <div class="swiper-button-next btn-arrow btn-arrow-right"></div>
         </div>
     </section>
 </main>
