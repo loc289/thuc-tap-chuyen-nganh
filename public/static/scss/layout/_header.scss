@@ -42,6 +42,23 @@ $margin-main: 32px;
     &-main {
         min-width: 100%;
         height: 455px;
+        object-fit: cover;
+    }
+    &-slide {
+        height: 455px;
+        background-size: cover;
+        &:first-child {
+            display: block;
+        }
+    }
+    &-slide,
+    &_inner {
+        display: none;
+        transition: all 0.5s ease;
+    }
+    &-slide:first-child,
+    &_inner:first-child {
+        display: block;
     }
 }
 .top-bar {

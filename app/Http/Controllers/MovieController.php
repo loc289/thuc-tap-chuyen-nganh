@@ -12,14 +12,14 @@ class MovieController extends Controller
      */
             public function index()
             {
-
+                $token_api='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1N2IyMDUwMWZiYmNhY2EyZDgwZTE0ODg1YTY5YzA4ZSIsInN1YiI6IjY2MWQ2YTFiMzM5NmI5MDE3YzdkY2M3NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WBYiDg-qY95pK1ieAjX6hfx-RM7R0tZ_iEZmfwflCJg';
                 // Phổ biến
-                $popularMovie = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1N2IyMDUwMWZiYmNhY2EyZDgwZTE0ODg1YTY5YzA4ZSIsInN1YiI6IjY2MWQ2YTFiMzM5NmI5MDE3YzdkY2M3NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WBYiDg-qY95pK1ieAjX6hfx-RM7R0tZ_iEZmfwflCJg')
+                $popularMovie = Http::withToken($token_api)
                     ->get('https://api.themoviedb.org/3/movie/popular')
                     ->json()['results'];
 
                     // Sắp chiếu
-                $upcomingMovie = Http::withToken('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1N2IyMDUwMWZiYmNhY2EyZDgwZTE0ODg1YTY5YzA4ZSIsInN1YiI6IjY2MWQ2YTFiMzM5NmI5MDE3YzdkY2M3NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WBYiDg-qY95pK1ieAjX6hfx-RM7R0tZ_iEZmfwflCJg')
+                $upcomingMovie = Http::withToken($token_api)
                     ->get('https://api.themoviedb.org/3/movie/upcoming')
                     ->json()['results'];
 
@@ -31,6 +31,7 @@ class MovieController extends Controller
                         'poster' => 'https://image.tmdb.org/t/p/w500' . $movie['poster_path'],
                         'release_date' => $movie['release_date'],
                         'id' => 'https://www.themoviedb.org/movie/' . $movie['id'],
+                        'backdrop' => 'https://image.tmdb.org/t/p/original' . $movie['backdrop_path'], 
                     ];
                 }
 
@@ -41,6 +42,7 @@ class MovieController extends Controller
                         'poster' => 'https://image.tmdb.org/t/p/w500' . $movie['poster_path'],
                         'release_date' => $movie['release_date'],
                         'id' => 'https://www.themoviedb.org/movie/' . $movie['id'],
+                        'backdrop' => 'https://image.tmdb.org/t/p/w1250' . $movie['backdrop_path'], 
                     ];
                 }
 

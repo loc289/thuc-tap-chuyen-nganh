@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-@include('components.banner')
+@include('components.banner', ['movies' => $popularMovies])
 <main class="main-content">
     <section class="feature">
         <h2 class="feature-heading">Phổ biến</h2>

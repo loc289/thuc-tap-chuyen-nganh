@@ -31,7 +31,6 @@
 
                     <!-- Dropdown -->
                     @include('components.dropdown-logOut')
-
                 </div>
             </div>
         </div>
