@@ -12,15 +12,18 @@ class MovieController extends Controller
      */
             public function index()
             {
-                $token_api='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1N2IyMDUwMWZiYmNhY2EyZDgwZTE0ODg1YTY5YzA4ZSIsInN1YiI6IjY2MWQ2YTFiMzM5NmI5MDE3YzdkY2M3NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WBYiDg-qY95pK1ieAjX6hfx-RM7R0tZ_iEZmfwflCJg';
+                // Ngay đầu tệp, đảm bảo định nghĩa base URL và API token từ biến môi trường
+                $token_api = env('TMDB_API_TOKEN');
+                $base_url = env('TMDB_BASE_URL', 'https://api.themoviedb.org/3');
+
                 // Phổ biến
                 $popularMovie = Http::withToken($token_api)
-                    ->get('https://api.themoviedb.org/3/movie/popular')
+                    ->get("{$base_url}/movie/popular?language=vi-VN")
                     ->json()['results'];
 
-                    // Sắp chiếu
+                // Sắp chiếu
                 $upcomingMovie = Http::withToken($token_api)
-                    ->get('https://api.themoviedb.org/3/movie/upcoming')
+                    ->get("{$base_url}/movie/upcoming?language=vi-VN")
                     ->json()['results'];
 
                 // Tạo mảng chứa thông tin phim
