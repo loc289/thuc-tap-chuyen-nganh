@@ -1,46 +1,52 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="login">
-
-    <form method="POST" action="{{ route('register') }}" class="login__form">
+<x-guest-layout>
+    <form method="POST" action="{{ route('register') }}">
         @csrf
-        <h1 class="login__title">Register</h1>
-        <div class="login__content">
 
-            <div class="login__box">
-                <input type="text" name="name" class="login__input" id="login-name" placeholder=" " required>
-                <label for="login-name" class="login__label">Name</label>
-            </div>
-
-            <div class="login__box">
-                <input type="text" name="email" class="login__input" id="login-email" placeholder=" " required>
-                <label for="login-email" class="login__label">Email</label>
-            </div>
-
-            <div class="login__box">
-                <input type="text" name="password" class="login__input" id="login-password" placeholder=" " required>
-                <label for="login-password" class="login__label">Password</label>
-            </div>
-
-            <div class="login__box">
-                <input type="text" name="confirm-pass" class="login__input" id="login-confirm-pass" placeholder=" "
-                    required>
-                <label for="login-confirm-pass" class="login__label">Confirm Password</label>
-            </div>
+        <!-- Name -->
+        <div>
+            <x-input-label for="name" :value="__('Name')" />
+            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
-        <button type="submit" class="login__button">Register</button>
 
-        <div class="login__line"></div>
-        <a href="#!" class="login__button login__google">
-            <img src="{{ asset('static/assets/icons/google.svg') }}" class="google-link" alt="">
-            Or sign in with Google</a>
+        <!-- Email Address -->
+        <div class="mt-4">
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
 
-        <!-- Liên kết Đăng nhập -->
-        <p class="login__register">
-            I have an account ? <a href="{{ route('login') }}">Login</a>
-        </p>
+        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="password" :value="__('Password')" />
+
+            <x-text-input id="password" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="new-password" />
+
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mt-4">
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+
+            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                            type="password"
+                            name="password_confirmation" required autocomplete="new-password" />
+
+            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
+        <div class="flex items-center justify-end mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                {{ __('Already registered?') }}
+            </a>
+
+            <x-primary-button class="ms-4">
+                {{ __('Register') }}
+            </x-primary-button>
+        </div>
     </form>
-</div>
-
-@endsection
+</x-guest-layout>

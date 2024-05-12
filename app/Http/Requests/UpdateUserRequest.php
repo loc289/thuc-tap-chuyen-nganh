@@ -34,6 +34,7 @@ class UpdateUserRequest extends FormRequest
             'birthday' => 'required|date',
             'phone_number' => 'required|size:10',
             'address' => 'required',
+            'avatar' => 'nullable|image',
         ];
     }
 
@@ -53,6 +54,7 @@ class UpdateUserRequest extends FormRequest
             'email.unique' => 'Email đã tồn tại.',
             'email.string' => 'Email phải là một chuỗi.',
             'email.max' => 'Email không được dài quá :max ký tự.',
+            'avatar.image' => 'Ảnh đại diện phải là tệp tin dạng ảnh!',
         ];
     }
 }
