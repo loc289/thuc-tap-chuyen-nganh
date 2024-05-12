@@ -2,26 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class IndexController extends Controller
 {
-    public function homepage(){
+    public function homepage()
+    {
         return view('pages.main');
     }
-    public function favorite(){
+
+    public function favorite()
+    {
         return view('pages.favorite');
     }
-    public function trending(){
+
+    public function trending()
+    {
         return view('pages.trending');
     }
-    public function comming(){
+
+    public function comming()
+    {
         return view('pages.comming');
     }
-    public function movie(){
+
+    public function movie()
+    {
         return view('pages.movie');
     }
-    public function watch(){
+
+    public function watch()
+    {
         return view('pages.watch');
     }
 }
