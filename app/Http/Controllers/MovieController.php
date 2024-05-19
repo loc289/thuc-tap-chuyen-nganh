@@ -27,7 +27,6 @@ class MovieController extends Controller
      */
     public function index()
     {
-        // dd(auth()->guard('web')->user());
         // Phổ biến
         $popularMovie = Http::withToken(env('TMDB_API_TOKEN'))
             ->get(env('TMDB_BASE_URL').'/movie/popular?language=vi-VN')

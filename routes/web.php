@@ -20,9 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth'])->group(function () {
-        // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
         Route::resource('users', UserController::class);
         Route::get('/users/view-change-password/{user}', [UserController::class, 'viewChangePassword'])->name('users.view-change-password');
         Route::post('/users/change-password/{user}', [UserController::class, 'changePassword'])->name('users.change-password');
@@ -41,7 +38,6 @@ Route::prefix('admin')->group(function () {
 
 // Route để chuyển hướng người dùng đến Google
 Route::get('login/google', [AuthLoginController::class, 'redirectToProvider'])->name('web.login');
-
 // Route để xử lý phản hồi từ Google
 Route::get('login/google/callback', [AuthLoginController::class, 'handleProviderCallback']);
 
