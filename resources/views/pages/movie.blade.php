@@ -4,33 +4,38 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <img src="./static/assets/imgs/img-main.jpg" alt="" class="movie__main--img">
+                <img src="{{ env('TMDB_URL_IAMGE').($data['backdrop_path'] ? $data['backdrop_path'] : $data['poster_path']) }}" alt="" class="movie__main--img">
             </div>
             <div class="col-lg-6">
                 <div class="movie__detail">
                     <div class="row-1">
-                        <h2 class="movie__name">Tên phim</h2>
+                        <h2 class="movie__name">{{ $data['title'] }}</h2>
                         <div class="assess">
                             <img src="./static/assets/icons/star.svg" alt="">
-                            <span>7.8/10 </span>
+                            <span>{{ $data['vote_average'] }}/10 </span>
                         </div>
                     </div>
                     <div class="row-2">
-                        <span class="year">2023</span>
-                        <span class="genre">Drama</span>
-                        <span class="time">2h 38m</span>
+                        <span class="year">{{ $data['release_date'] }}</span>
+                        <span class="genre">{{ $data['genres']? $data['genres'][0]['name'] : '' }}</span>
+                        <span class="time">{{ $data['runtime'] }} phút</span>
                     </div>
                     <div class="row-3">
-                        <p class="movie__desc">The movie follows the lives of a wealthy family, the Johnsons, who appear
-                            to have it all: a grand mansion, luxurious cars, and expensive designer clothing. However,
-                            behind the facade of their lavish lifestyle, there are deep-seated tensions and secrets that
-                            threaten to tear the family apart.</p>
+                        <p class="movie__desc">{{ $data['overview'] }}</p>
                     </div>
                     <div class="primary-action">
-                        <a href="#!" class="primary-watch"><img src="./static/assets/button/watch-now.svg" alt="" /></a>
-                        <a href="#!" class="primary-save" id="likeButton">
-                            <img src="./static/assets/button/like.svg" class="likeImage" alt="" />
-                        </a>
+                        <a href="{{ route('web.movie-watch', $data['id']) }}" class="primary-watch"><img src="{{ asset('static/assets/button/watch-now.svg') }}" alt="" /></a>
+
+                        @auth('web')
+                        <form action="{{ route('web.movie-like', $data['id']) }}" method="POST">
+                            @csrf
+                            <button class="primary-save" id="likeButton" type="submit">
+                                <img src="{{ asset('static/assets/button').(auth()->guard('web')->user()->checkFavorite($data['id']) ? '/liked.svg' : '/like.svg') }}" class="likeImage" alt="Like" />
+                            </button>
+                        </form>
+                        @else
+                        <p class="likeImage">Đăng nhập để thích phim!</p>
+                        @endauth
                     </div>
                 </div>
             </div>
