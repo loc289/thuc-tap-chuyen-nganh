@@ -41,22 +41,24 @@
 
 <body>
     <div class="content">
-        @auth
-        @include('templates.navigation.logInNavigation')
-        <div class="container">
-            @include('templates.header.logInHeader')
-            <!-- Main-Content for logged-in users -->
-            @yield('content')
-        </div>
+        @auth('web')
+            @include('templates.navigation.logInNavigation')
+
+            <div class="container">
+                @include('templates.header.logInHeader')
+                <!-- Main-Content for logged-in users -->
+                @yield('content')
+            </div>
         @else
-        @guest
-        @include('templates.navigation.logOutNavigation')
-        <div class="container">
-            @include('templates.header.logOutHeader')
-            <!-- Main-Content for guests -->
-            @yield('content')
-        </div>
-        @endguest
+            @guest('web')
+                @include('templates.navigation.logOutNavigation')
+
+                <div class="container">
+                    @include('templates.header.logOutHeader')
+                    <!-- Main-Content for guests -->
+                    @yield('content')
+                </div>
+            @endguest
         @endauth
     </div>
 

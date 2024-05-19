@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             if (likeImage) {
                 likeImage.classList.toggle("liked");
                 if (likeImage.classList.contains("liked")) {
-                    likeImage.src = "static/assets/button/liked.svg";
+                    likeImage.src = "/static/assets/button/liked.svg";
                 } else {
-                    likeImage.src = "static/assets/button/like.svg";
+                    likeImage.src = "/static/assets/button/like.svg";
                 }
             }
         });

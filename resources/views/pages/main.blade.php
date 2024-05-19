@@ -11,7 +11,7 @@
                 @foreach($popularMovies as $movie)
                 <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="movie-item">
-                        <a href="{{ $movie['id']}}" class="movie-link">
+                        <a href="{{ route('web.movie-detail', $movie['id']) }}" class="movie-link">
                             <img src="{{ $movie['poster'] }}" alt="" class="movie-item__img" loading="lazy" />
                             <div class="movie-info">
                                 <h3 class="movie__heading">{{ $movie['title'] }}</h3>
@@ -38,7 +38,7 @@
                 @foreach ($upcomingMovies as $movie)
                 <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="movie-item">
-                        <a href="{{ $movie['id']}}" class="movie-link">
+                        <a href="{{ route('web.movie-detail', $movie['id']) }}" class="movie-link">
                             <img src="{{ $movie['poster'] }}" alt="" class="movie-item__img" loading="lazy" />
                             <div class="movie-info">
                                 <h3 class="movie__heading">{{ $movie['title'] }}</h3>

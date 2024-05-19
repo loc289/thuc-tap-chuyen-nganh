@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Customer;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -23,20 +23,17 @@ class AuthLoginController extends Controller
     {
         try {
             $googleUser = Socialite::driver('google')->user();
-            $user = User::where('email', $googleUser->email)->first();
+            $customer = Customer::where('email', $googleUser->email)->first();
 
-            if ($user) {
-                Auth::login($user, true);
-            } else {
-                $user = User::create([
+            if (empty($customer)) {
+                $customer = Customer::create([
                     'name' => $googleUser->name,
                     'email' => $googleUser->email,
                     'google_id' => $googleUser->id,
                     'password' => Hash::make(Hash::make(Str::random(16))),
                 ]);
-
-                Auth::login($user, true);
             }
+            Auth::guard('web')->login($customer, true);
 
             return redirect('/');
         } catch (Exception $e) {
