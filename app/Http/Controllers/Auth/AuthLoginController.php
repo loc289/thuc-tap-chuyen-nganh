@@ -11,9 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rules\Password;
 use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Validation\ValidationException;
 
 class AuthLoginController extends Controller
 {
@@ -55,7 +53,8 @@ class AuthLoginController extends Controller
     }
 
     // trang login
-    public function login() {
+    public function login()
+    {
         return view('pages.login');
     }
 
@@ -74,6 +73,7 @@ class AuthLoginController extends Controller
     {
         $login = $request->input('login');
         $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
         return [
             $field => $login,
             'password' => $request->input('password'),
@@ -81,7 +81,8 @@ class AuthLoginController extends Controller
     }
 
     // trang register
-    public function register() {
+    public function register()
+    {
         return view('pages.register');
     }
 
