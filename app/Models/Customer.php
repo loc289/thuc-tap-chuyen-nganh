@@ -15,6 +15,7 @@ class Customer extends Authenticatable
         'password',
         'name',
         'google_id',
+        'username',
     ];
 
     public function favorites()
