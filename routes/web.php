@@ -4,7 +4,6 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthLoginController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MovieController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,10 +35,16 @@ Route::prefix('admin')->group(function () {
 //     Route::get('/xem-phim', [IndexController::class, 'watch'])->name('watch');
 // });
 
+Route::get('login', [AuthLoginController::class, 'login'])->name('web.login');
+Route::post('login', [AuthLoginController::class, 'store'])->name('web.post-login');
+Route::get('register', [AuthLoginController::class, 'register'])->name('web.register');
+Route::post('register', [AuthLoginController::class, 'postRegister'])->name('web.post-register');
+
 // Route để chuyển hướng người dùng đến Google
-Route::get('login/google', [AuthLoginController::class, 'redirectToProvider'])->name('web.login');
+Route::get('login/google', [AuthLoginController::class, 'redirectToProvider'])->name('web.login-google');
 // Route để xử lý phản hồi từ Google
 Route::get('login/google/callback', [AuthLoginController::class, 'handleProviderCallback']);
+Route::post('logout-web', [AuthLoginController::class, 'destroy'])->name('web.logout');
 
 Route::get('/', [MovieController::class, 'index'])->name('web.home');
 Route::get('/chi-tiet-phim/{id}', [MovieController::class, 'show'])->name('web.movie-detail');
