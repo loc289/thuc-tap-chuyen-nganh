@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\NationController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthLoginController;
-use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MovieController as AdminMovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,10 @@ Route::prefix('admin')->group(function () {
         Route::resource('users', UserController::class);
         Route::get('/users/view-change-password/{user}', [UserController::class, 'viewChangePassword'])->name('users.view-change-password');
         Route::post('/users/change-password/{user}', [UserController::class, 'changePassword'])->name('users.change-password');
+
+        Route::resource('categories', CategoryController::class);
+        Route::resource('nations', NationController::class);
+        Route::resource('movies', AdminMovieController::class);
     });
     require __DIR__.'/auth.php';
 });

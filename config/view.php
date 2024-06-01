@@ -33,4 +33,6 @@ return [
         realpath(storage_path('framework/views'))
     ),
 
+    'default_pagination' => env('VIEW_DEFAULT_PAGINATION', '10'),
+
 ];

@@ -7,12 +7,20 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title" key="t-menu">Manage</li>
+                <li class="menu-title" key="t-menu">Menu quản lý</li>
 
                 <li>
                     <a href="{{ route('users.index') }}" class=" waves-effect">
-                        <i class="bx bx-user"></i>
-                        <span>Tài khoản</span>
+                        <span>Khách hàng</span>
+                    </a>
+                    <a href="{{ route('categories.index') }}" class=" waves-effect">
+                        <span>Thể loại phim</span>
+                    </a>
+                    <a href="{{ route('nations.index') }}" class=" waves-effect">
+                        <span>Quốc gia</span>
+                    </a>
+                    <a href="{{ route('movies.index') }}" class=" waves-effect">
+                        <span>Phim</span>
                     </a>
                 </li>
             </ul>
