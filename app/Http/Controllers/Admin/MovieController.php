@@ -101,9 +101,7 @@ class MovieController extends Controller
             $hashed_video_name = $video->hashName();
             $movie->video = $video->storeAs('videos', $hashed_video_name, 'public_uploads');
         }
-        if (request()->trending) {
-            $movie->trending = request()->trending;
-        }
+        $movie->trending = request()->trending ?? 0;
         if (request()->price) {
             $movie->price = request()->price;
         }

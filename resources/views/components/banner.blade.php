@@ -8,7 +8,7 @@
             <a href="{{ route('web.movie-watch', $movie->id) }}" class="primary-watch"><img src="./static/assets/button/watch-now.svg"
                     alt="Watch Now" /></a>
             @auth('web')
-            <form action="{{ route('movie-like', $movie->id) }}" method="POST">
+            <form action="{{ route('web.movie-like', $movie->id) }}" method="POST">
                 @csrf
                 <button class="primary-save" id="likeButton" type="submit">
                     <img src="{{ asset('static/assets/button').(auth()->guard('web')->user()->checkFavorite($movie['id']) ? '/liked.svg' : '/like.svg') }}" class="likeImage" alt="Like" />
