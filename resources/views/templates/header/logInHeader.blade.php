@@ -2,9 +2,7 @@
     <div class="top-bar px-3 py-3">
         <ul class="top-list">
             <a href="#!" class="logo">
-                <!-- <img src="{{ asset('static/assets/icons/heart.svg') }}" alt="" class="logo__img" /> -->
                 <img src="{{ asset('static/assets/icons/logo.svg') }}" alt="" class="logo__img">
-
             </a>
 
             <!-- Nav 1 -->
@@ -100,10 +98,44 @@
                 <a href="#!" class="top-act__noti">
                     <img src="{{ asset('static/assets/icons/bell.svg') }}" alt=""/>
                 </a>
-                <div class="top-act__user">
-                    <img src="{{ asset('static/assets/imgs/avatar.jpg') }}" alt="" class="top-act__avt"/>
-                    <p class="top-act__name">{{ auth()->guard('web')->user()->name }}</p>
-                </div>
+
+                <ul class="top-list top-list-user">
+                    <li>
+                        <div class="top-act__user">
+                            <img src="{{ asset('static/assets/imgs/avatar.jpg') }}" alt="" class="top-act__avt"/>
+                            <p class="top-act__name">{{ auth()->guard('web')->user()->name }}</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <a class="user-action" href="{{ route('web.favorites') }}">
+                                    <img src="{{ asset('static/assets/icons/heart.svg') }}" alt=""
+                                         class="nav-link__logo"/>
+                                    <p>Yêu thích</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-action" href="#">
+                                    <img src="{{ asset('static/assets/icons/setting.svg') }}" alt=""
+                                         class="nav-link__logo"/>
+                                    Cài đặt
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-action" href="{{ route('web.logout') }}" onclick="event.preventDefault();
+   document.getElementById('logout-form').submit();">
+                                    <img src="{{ asset('static/assets/icons/log-out.svg') }}" alt=""
+                                         class="nav-link__logo"/>
+                                    Đăng xuất
+                                </a>
+
+                                <form id="logout-form" action="{{ route('web.logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

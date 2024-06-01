@@ -652,6 +652,11 @@ input:checked + .toggle:after {
     display: grid;
 }
 
+.top-list.top-list-user li:hover ul{
+    display: flex;
+    flex-direction: column;
+}
+
 .top-list ul {
     position: absolute;
     left: 0;
@@ -821,4 +826,9 @@ input:checked + .toggle:after {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.user-action {
+  display: flex;
+  align-items: center;
 }

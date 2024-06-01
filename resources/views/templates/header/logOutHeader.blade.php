@@ -52,13 +52,7 @@
                         <img src="{{ asset('static/assets/icons/search.svg') }}"/>
                     </button>
                 </form>
-
-                <a href="#!" class="top-act__noti">
-                    <img src="{{ asset('static/assets/icons/bell.svg') }}" alt=""/>
-                </a>
-
-                <!-- Dropdown -->
-                @include('components.dropdown-logOut')
+                <a href="{{ route('web.login') }}">Đăng nhập</a>
             </div>
         </div>
     </div>
