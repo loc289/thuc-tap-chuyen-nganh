@@ -53,11 +53,12 @@ Route::get('login/google/callback', [AuthLoginController::class, 'handleProvider
 Route::post('logout-web', [AuthLoginController::class, 'destroy'])->name('web.logout');
 
 Route::get('/', [MovieController::class, 'index'])->name('web.home');
-Route::get('/chi-tiet-phim/{id}', [MovieController::class, 'show'])->name('web.movie-detail');
-Route::get('/danh-muc/{id}', [MovieController::class, 'category'])->name('web.movie-category');
-Route::get('/tim-kiem', [MovieController::class, 'search'])->name('web.movie-search');
-Route::get('/xem-phim/{id}', [MovieController::class, 'watch'])->name('web.movie-watch');
-Route::post('/thich-phim/{id}', [MovieController::class, 'like'])->name('web.movie-like');
-Route::get('/yeu-thich', [MovieController::class, 'favorites'])->name('web.favorites');
+Route::get('/movies/{id}', [MovieController::class, 'show'])->name('web.movie-detail');
+Route::get('/categories/{id}/movies', [MovieController::class, 'category'])->name('web.movie-category');
+Route::get('/nations/{id}/movies', [MovieController::class, 'nation'])->name('web.movie-nation');
+Route::get('/search', [MovieController::class, 'search'])->name('web.movie-search');
+Route::get('/movies/{id}/watch', [MovieController::class, 'watch'])->name('web.movie-watch');
+Route::post('/movies/{id}/favorite', [MovieController::class, 'like'])->name('web.movie-like');
+Route::get('/my_favorite', [MovieController::class, 'favorites'])->name('web.favorites');
 
 // Auth::routes();

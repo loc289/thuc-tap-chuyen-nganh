@@ -1,10 +1,11 @@
 @extends('welcome')
 @section('content')
-<div class="movie mt-header">
-    <div class="container">
+    <div class="movie mt-header">
         <div class="row">
-            {!! $iframe !!}
+            <video style="height: 80vh" controls autoplay>
+                <source src="{{url('/uploads/'.$movie->video)}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
-</div>
 @endsection

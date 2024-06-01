@@ -1,7 +1,7 @@
 <header class="header sticky-top">
     <div class="top-bar px-3 py-3">
         <ul class="top-list">
-            <a href="#!" class="logo">
+            <a href="{{route('web.home')}}" class="logo">
                 <img src="{{ asset('static/assets/icons/logo.svg') }}" alt="" class="logo__img">
             </a>
 
@@ -62,7 +62,7 @@
                     @foreach ($nations as $nation)
                         <li>
                             <a class="top-link"
-                               href="{{ route('web.movie-category', $nation->id) }}">{{ $nation->name }}</a>
+                               href="{{ route('web.movie-nation', $nation->id) }}">{{ $nation->name }}</a>
                         </li>
                     @endforeach
                 </ul>

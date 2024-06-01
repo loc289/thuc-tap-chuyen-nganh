@@ -1,36 +1,37 @@
 @extends('welcome')
 @section('content')
-<div class="movie mt-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <img src="{{ env('TMDB_URL_IAMGE').($data['backdrop_path'] ? $data['backdrop_path'] : $data['poster_path']) }}" alt="" class="movie__main--img">
-            </div>
-            <div class="col-lg-6">
-                <div class="movie__detail">
-                    <div class="row-1">
-                        <h2 class="movie__name">{{ $data['title'] }}</h2>
-                        <div class="assess">
-                            <img src="./static/assets/icons/star.svg" alt="">
-                            <span>{{ $data['vote_average'] }}/10 </span>
+    <div class="movie mt-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{url('/uploads/'.$movie->image)}}" alt="" class="movie__main--img">
+                </div>
+                <div class="col-lg-6">
+                    <div class="movie__detail">
+                        <div class="row-1">
+                            <h2 class="movie__name">{{ $movie->name }}</h2>
+                            <div class="assess">
+                                <img src="./static/assets/icons/star.svg" alt="">
+                                <span>{{$movie->point}}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row-2">
-                        <span class="year">{{ $data['release_date'] }}</span>
-                        <span class="genre">{{ $data['genres']? $data['genres'][0]['name'] : '' }}</span>
-                        <span class="time">{{ $data['runtime'] }} phút</span>
-                    </div>
-                    <div class="row-3">
-                        <p class="movie__desc">{{ $data['overview'] }}</p>
-                    </div>
-                    <div class="primary-action">
-                        <a href="{{ route('web.movie-watch', $data['id']) }}" class="primary-watch"><img src="{{ asset('static/assets/button/watch-now.svg') }}" alt="" /></a>
+                        <div class="row-2">
+                            <span class="year">{{ $movie->release_date }}</span>
+                            <span class="genre">{{ $movie->category->name }}</span>
+                            <span class="time">{{ $movie->duration }} phút</span>
+                        </div>
+                        <div class="row-3">
+                            <p class="movie__desc">{{ $movie->description }}</p>
+                        </div>
+                        <div class="primary-action">
+                            <a href="{{ route('web.movie-watch', $movie->id) }}" class="primary-watch"><img
+                                        src="{{ asset('static/assets/button/watch-now.svg') }}" alt=""/></a>
 
-                        @auth('web')
-                        <form action="{{ route('web.movie-like', $data['id']) }}" method="POST">
-                            @csrf
-                            <button class="primary-save" id="likeButton" type="submit">
-                                <img src="{{ asset('static/assets/button').(auth()->guard('web')->user()->checkFavorite($data['id']) ? '/liked.svg' : '/like.svg') }}" class="likeImage" alt="Like" />
+                            @auth('web')
+                                <form action="{{ route('web.movie-like', $movie->id) }}" method="POST">
+                                    @csrf
+                                    <button class="primary-save" id="likeButton" type="submit">
+                                        <img src="{{ asset('static/assets/button').(auth()->guard('web')->user()->checkFavorite($movie->id) ? '/liked.svg' : '/like.svg') }}" class="likeImage" alt="Like" />
                             </button>
                         </form>
                         @else

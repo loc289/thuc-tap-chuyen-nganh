@@ -20,7 +20,7 @@
                     @foreach ($nations as $nation)
                         <li>
                             <a class="top-link"
-                               href="{{ route('web.movie-category', $nation->id) }}">{{ $nation->name }}</a>
+                               href="{{ route('web.movie-nation', $nation->id) }}">{{ $nation->name }}</a>
                         </li>
                     @endforeach
                 </ul>

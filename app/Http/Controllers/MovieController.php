@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\View;
 
 class MovieController extends Controller
 {
-    protected $genres;
+    protected $nations;
+    protected $categories;
 
     public function __construct()
     {
@@ -22,12 +23,9 @@ class MovieController extends Controller
 
         $categories = Category::all();
         View::share('categories', $categories);
-//        $genres = Http::withToken(env('TMDB_API_TOKEN'))
-//            ->get(env('TMDB_BASE_URL').'/genre/movie/list?language=vi-VN')
-//            ->json()['genres'];
-//
-//        $this->genres = $genres;
-//        View::share('genres', $genres);
+
+        $this->nations = $nations;
+        $this->categories = $categories;
     }
 
     /**
@@ -59,12 +57,10 @@ class MovieController extends Controller
      */
     public function show(int $id)
     {
-        $movieDetail = Http::withToken(env('TMDB_API_TOKEN'))
-            ->get(env('TMDB_BASE_URL')."/movie/$id?language=vi-VN")
-            ->json();
+        $movie = Movie::find($id);
 
         $data = [
-            'data' => $movieDetail,
+            'movie' => $movie,
         ];
 
         return view('pages.movie', $data);
@@ -75,18 +71,25 @@ class MovieController extends Controller
      */
     public function category(int $id)
     {
-        $filteredArrayGenre = array_filter($this->genres, function ($item) use ($id) {
-            return $item['id'] === $id;
-        });
-        $categoryName = reset($filteredArrayGenre)['name'];
-
-        $movies = Http::withToken(env('TMDB_API_TOKEN'))
-            ->get(env('TMDB_BASE_URL')."/discover/movie?include_adult=false&include_video=false&language=vi-VN&sort_by=popularity.desc&with_genres=$id")
-            ->json()['results'];
+        $movies = Movie::where('category_id', $id)->where('status', config('constants.status_active'))->get();
+        $category_name = Category::find($id)->name;
 
         $data = [
-            'data' => $movies,
-            'categoryName' => $categoryName,
+            'movies' => $movies,
+            'categoryName' => $category_name,
+        ];
+
+        return view('pages.category', $data);
+    }
+
+    public function nation(int $id)
+    {
+        $movies = Movie::where('nation_id', $id)->where('status', config('constants.status_active'))->get();
+        $category_name = Nation::find($id)->name;
+
+        $data = [
+            'movies' => $movies,
+            'categoryName' => $category_name,
         ];
 
         return view('pages.category', $data);
@@ -98,12 +101,10 @@ class MovieController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->keyword;
-        $movies = Http::withToken(env('TMDB_API_TOKEN'))
-            ->get(env('TMDB_BASE_URL')."/search/movie?query=$keyword&include_adult=false&language=vi-VN&page=1&region=vi-VN")
-            ->json()['results'];
+        $movies = Movie::where('name', 'like', "%$keyword%")->where('status', config('constants.status_active'))->get();
 
         $data = [
-            'data' => $movies,
+            'movies' => $movies,
             'categoryName' => 'Tìm kiếm',
         ];
 
@@ -115,14 +116,10 @@ class MovieController extends Controller
      */
     public function watch(int $id)
     {
-        $movies = [
-            '<iframe width="1280" height="720" src="https://www.youtube.com/embed/m30S4Ax9BOM?si=-ic_8H8mchcdgjSu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            '<iframe width="1280" height="720" src="https://www.youtube.com/embed/B2Jlyq_Tf3Y?si=YP1kcdTGtDNo8JqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            '<iframe width="1280" height="720" src="https://www.youtube.com/embed/YUWkCwWsurE?si=1wmwV_QX14B2P23w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-        ];
+        $movie = Movie::find($id);
 
         $data = [
-            'iframe' => $movies[array_rand($movies)],
+            'movie' => $movie,
         ];
 
         return view('pages.watch', $data);
@@ -165,7 +162,7 @@ class MovieController extends Controller
         foreach ($favorites as $item) {
             $movieId = $item->movie_id;
             $movies[] = Http::withToken(env('TMDB_API_TOKEN'))
-                ->get(env('TMDB_BASE_URL')."/movie/$movieId?language=en-vi-VN")
+                ->get(env('TMDB_BASE_URL') . "/movie/$movieId?language=en-vi-VN")
                 ->json();
         }
 
