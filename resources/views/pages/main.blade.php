@@ -1,21 +1,21 @@
 @extends('welcome')
 @section('content')
-@include('components.banner', ['movies' => $popularMovies])
+@include('components.banner', ['movies' => $trending_movies])
 <main class="main-content">
     <section class="feature">
-        <h2 class="feature-heading">Phổ biến</h2>
+        <h2 class="feature-heading">Thịnh hành</h2>
         <div class="carousel row swiper-container swiper">
             <!-- Swiper Wrapper -->
             <div class="swiper-wrapper">
                 <!-- Các Swiper Slides -->
-                @foreach($popularMovies as $movie)
+                @foreach($trending_movies as $movie)
                 <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="movie-item">
-                        <a href="{{ route('web.movie-detail', $movie['id']) }}" class="movie-link">
-                            <img src="{{ $movie['poster'] }}" alt="" class="movie-item__img" loading="lazy" />
+                        <a href="{{ route('web.movie-detail', $movie->id) }}" class="movie-link">
+                            <img src="{{ url('/uploads/'.$movie->image) }}" alt="" class="movie-item__img" loading="lazy" />
                             <div class="movie-info">
-                                <h3 class="movie__heading">{{ $movie['title'] }}</h3>
-                                <p class="movie__desc">{{ $movie['release_date'] }}</p>
+                                <h3 class="movie__heading">{{ $movie->name }}</h3>
+                                <p class="movie__desc">{{ $movie->release_date }}</p>
                             </div>
                         </a>
                     </div>
@@ -30,19 +30,19 @@
 
     <!-- Dành cho bạn -->
     <section class="feature mt-32">
-        <h2 class="feature-heading">Sắp chiếu</h2>
+        <h2 class="feature-heading">Tất cả phim</h2>
         <div class="carousel row swiper-container swiper">
             <!-- Swiper Wrapper -->
             <div class="swiper-wrapper">
                 <!-- Các Swiper Slides -->
-                @foreach ($upcomingMovies as $movie)
+                @foreach ($movies as $movie)
                 <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="movie-item">
-                        <a href="{{ route('web.movie-detail', $movie['id']) }}" class="movie-link">
-                            <img src="{{ $movie['poster'] }}" alt="" class="movie-item__img" loading="lazy" />
+                        <a href="{{ route('web.movie-detail', $movie->id) }}" class="movie-link">
+                            <img src="{{ url('/uploads/'.$movie->image) }}" alt="" class="movie-item__img" loading="lazy" />
                             <div class="movie-info">
-                                <h3 class="movie__heading">{{ $movie['title'] }}</h3>
-                                <p class="movie__desc">{{ $movie['release_date'] }}</p>
+                                <h3 class="movie__heading">{{ $movie->name }}</h3>
+                                <p class="movie__desc">{{ $movie->release_date }}</p>
                             </div>
                         </a>
                     </div>

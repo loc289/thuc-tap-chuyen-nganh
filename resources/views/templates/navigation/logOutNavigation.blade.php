@@ -21,34 +21,6 @@
                 </a>
             </li>
             @endauth
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <img src="{{ asset('static/assets/icons/trending.svg') }}" alt="" class="nav-link__logo" />
-                    <p>Thịnh hành</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <img src="{{ asset('static/assets/icons/calendar.svg') }}" alt="" class="nav-link__logo" />
-                    <p>Sắp ra mắt</p>
-                </a>
-            </li>
         </ul>
-    </ul>
-
-    <!-- Nav 2 -->
-    <ul class="nav flex-column nav-2">
-        <li class="nav-item">
-            <a class="nav-link" href="">
-                <img src="./static/assets/icons/user.svg" alt="" class="nav-link__logo" />
-                Community
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <img src="./static/assets/icons/message.svg" alt="" class="nav-link__logo" />
-                Social
-            </a>
-        </li>
     </ul>
 </div>

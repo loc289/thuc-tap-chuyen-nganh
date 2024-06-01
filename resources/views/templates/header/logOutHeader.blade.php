@@ -1,41 +1,65 @@
-    <header class="header">
-        <div class="top-bar">
-            <ul class="top-list">
-                <li>
-                    <a class="top-link" href="#!">Quốc gia</a>
+<header class="header sticky-top">
+    <div class="top-bar px-3 py-3">
+        <ul class="top-list">
+            <a href="{{ route('web.home') }}" class="logo">
+                <!-- <img src="./static/assets/icons/heart.svg" alt="" class="logo__img" /> -->
+                <img src="./static/assets/icons/logo.svg" alt="" class="logo__img"/>
+            </a>
+
+            @auth('web')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('web.favorites') }}">
+                        <img src="{{ asset('static/assets/icons/heart.svg') }}" alt="" class="nav-link__logo"/>
+                        <p>Yêu thích</p>
+                    </a>
                 </li>
-                <li>
-                    <a class="top-link" href="#!">Thể loại</a>
-                    <ul class="">
-                        @foreach ($genres as $genre)
+            @endauth
+            <li>
+                <a class="top-link" href="#!">Quốc gia</a>
+                <ul class="">
+                    @foreach ($nations as $nation)
                         <li>
-                            <a class="top-link" href="{{ route('web.movie-category', $genre['id']) }}">{{ $genre['name'] }}</a>
+                            <a class="top-link"
+                               href="{{ route('web.movie-category', $nation->id) }}">{{ $nation->name }}</a>
                         </li>
-                        @endforeach
-                    </ul>
-                </li>
-            </ul>
-            <div class="top-act">
-                <div class="top-act__group">
-                    <!-- Button kích hoạt thanh tìm kiếm -->
-                    <a href="#!" class="top-act__search" id="searchToggle">
-                        <img src="{{ asset('static/assets/icons/search.svg') }}" alt="Search" />
-                    </a>
-                    <!-- Thanh tìm kiếm ẩn -->
-                    <form method="get" action="{{ route('web.movie-search') }}" id="searchBar" class="search-container" style="display: none;">
-                        <input name="keyword" class="searchInput" type="text" id="searchInput" placeholder="Nhập nội dung tìm kiếm..." />
-                        <button class="searchButton" id="searchButton" type="submit">
-                            <img src="{{ asset('static/assets/icons/search.svg') }}" />
-                        </button>
-                    </form>
+                    @endforeach
+                </ul>
+            </li>
+            <li>
+                <a class="top-link" href="#!">Thể loại</a>
+                <ul class="">
+                    @foreach ($categories as $category)
+                        <li>
+                            <a class="top-link"
+                               href="{{ route('web.movie-category', $category->id) }}">{{ $category->name }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </li>
+        </ul>
+        <div class="top-act">
+            <div class="top-act__group">
+                <!-- Button kích hoạt thanh tìm kiếm -->
+                <a href="#!" class="top-act__search" id="searchToggle">
+                    <img src="{{ asset('static/assets/icons/search.svg') }}" alt="Search"/>
+                </a>
+                <!-- Thanh tìm kiếm ẩn -->
+                <form method="get" action="{{ route('web.movie-search') }}" id="searchBar" class="search-container"
+                      style="display: none;">
+                    <input name="keyword" class="searchInput" type="text" id="searchInput"
+                           placeholder="Nhập nội dung tìm kiếm..."/>
+                    <button class="searchButton" id="searchButton" type="submit">
+                        <img src="{{ asset('static/assets/icons/search.svg') }}"/>
+                    </button>
+                </form>
 
-                    <a href="#!" class="top-act__noti">
-                        <img src="{{ asset('static/assets/icons/bell.svg') }}" alt="" />
-                    </a>
+                <a href="#!" class="top-act__noti">
+                    <img src="{{ asset('static/assets/icons/bell.svg') }}" alt=""/>
+                </a>
 
-                    <!-- Dropdown -->
-                    @include('components.dropdown-logOut')
-                </div>
+                <!-- Dropdown -->
+                @include('components.dropdown-logOut')
             </div>
         </div>
-    </header>
+    </div>
+</header>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Favorite;
+use App\Models\Movie;
+use App\Models\Nation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -14,12 +17,17 @@ class MovieController extends Controller
 
     public function __construct()
     {
-        $genres = Http::withToken(env('TMDB_API_TOKEN'))
-            ->get(env('TMDB_BASE_URL').'/genre/movie/list?language=vi-VN')
-            ->json()['genres'];
+        $nations = Nation::all();
+        View::share('nations', $nations);
 
-        $this->genres = $genres;
-        View::share('genres', $genres);
+        $categories = Category::all();
+        View::share('categories', $categories);
+//        $genres = Http::withToken(env('TMDB_API_TOKEN'))
+//            ->get(env('TMDB_BASE_URL').'/genre/movie/list?language=vi-VN')
+//            ->json()['genres'];
+//
+//        $this->genres = $genres;
+//        View::share('genres', $genres);
     }
 
     /**
@@ -27,44 +35,23 @@ class MovieController extends Controller
      */
     public function index()
     {
-        // Phổ biến
-        $popularMovie = Http::withToken(env('TMDB_API_TOKEN'))
-            ->get(env('TMDB_BASE_URL').'/movie/popular?language=vi-VN')
-            ->json()['results'];
+        $movies = Movie::all()->where('status', config('constants.status_active'));
 
-        // Sắp chiếu
-        $upcomingMovie = Http::withToken(env('TMDB_API_TOKEN'))
-            ->get(env('TMDB_BASE_URL').'/movie/upcoming?language=vi-VN')
-            ->json()['results'];
+        $trending_movies = [];
 
-        // Tạo mảng chứa thông tin phim
-        $popularMovies = [];
-        foreach ($popularMovie as $movie) {
-            $popularMovies[] = [
-                'title' => $movie['title'],
-                'poster' => 'https://image.tmdb.org/t/p/w500'.$movie['poster_path'],
-                'release_date' => $movie['release_date'],
-                'id' => $movie['id'],
-                'backdrop' => 'https://image.tmdb.org/t/p/original'.$movie['backdrop_path'],
-            ];
+        foreach ($movies as $movie) {
+            if ($movie->trending) {
+                $trending_movies[] = $movie;
+            }
         }
 
-        $upcomingMovies = [];
-        foreach ($upcomingMovie as $movie) {
-            $upcomingMovies[] = [
-                'title' => $movie['title'],
-                'poster' => 'https://image.tmdb.org/t/p/w500'.$movie['poster_path'],
-                'release_date' => $movie['release_date'],
-                'id' => $movie['id'],
-                'backdrop' => 'https://image.tmdb.org/t/p/w1250'.$movie['backdrop_path'],
-            ];
-        }
+        $data = [
+            'movies' => $movies,
+            'trending_movies' => $trending_movies,
+        ];
 
         // Truyền dữ liệu vào view
-        return view('pages.main', [
-            'popularMovies' => $popularMovies,
-            'upcomingMovies' => $upcomingMovies,
-        ]);
+        return view('pages.main', $data);
     }
 
     /**
