@@ -87,8 +87,8 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
+  /*font-size: 100%;*/
+  /*font: inherit;*/
   vertical-align: baseline;
 }
 
@@ -284,7 +284,7 @@ html {
 }
 .movie__detail {
   width: 533px;
-  margin-top: 75px;
+  /*margin-top: 75px;*/
 }
 .movie__name {
   font-size: 3.2rem;
@@ -726,6 +726,7 @@ input:checked + .toggle:after {
 }
 .primary-action {
   display: flex;
+  align-items: center;
   margin-top: 36px;
   gap: 20px;
 }
@@ -817,10 +818,6 @@ input:checked + .toggle:after {
 }
 
 /*# sourceMappingURL=main.css.map */
-
-.likeImage {
-    line-height: 57px;
-}
 
 .price {
   position: absolute;

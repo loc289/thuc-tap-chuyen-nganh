@@ -11,7 +11,7 @@
                         <div class="row-1">
                             <h2 class="movie__name">{{ $movie->name }}</h2>
                             <div class="assess">
-                                <img src="./static/assets/icons/star.svg" alt="">
+                                <img src="{{url('/static/assets/icons/star.svg')}}" alt="">
                                 <span>{{$movie->point}}</span>
                             </div>
                         </div>
@@ -23,9 +23,8 @@
                         <div class="row-3">
                             <p class="movie__desc">{{ $movie->description }}</p>
                         </div>
-                        <div class="primary-action">
-                            <a href="{{ route('web.movie-watch', $movie->id) }}" class="primary-watch"><img
-                                        src="{{ asset('static/assets/button/watch-now.svg') }}" alt=""/></a>
+                        <div class="primary-action mb-4">
+                            <a href="{{ route('web.movie-watch', $movie->id) }}" class="btn btn-primary btn-lg"><h2>Xem phim</h2></a>
 
                             @auth('web')
                                 <form action="{{ route('web.movie-like', $movie->id) }}" method="POST">

@@ -2,18 +2,8 @@
     <div class="top-bar px-3 py-3">
         <ul class="top-list">
             <a href="{{ route('web.home') }}" class="logo">
-                <!-- <img src="./static/assets/icons/heart.svg" alt="" class="logo__img" /> -->
-                <img src="./static/assets/icons/logo.svg" alt="" class="logo__img"/>
+                <img src="{{url('/static/assets/icons/logo.svg')}}" alt="" class="logo__img"/>
             </a>
-
-            @auth('web')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('web.favorites') }}">
-                        <img src="{{ asset('static/assets/icons/heart.svg') }}" alt="" class="nav-link__logo"/>
-                        <p>Yêu thích</p>
-                    </a>
-                </li>
-            @endauth
             <li>
                 <a class="top-link" href="#!">Quốc gia</a>
                 <ul class="">
