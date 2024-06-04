@@ -5,7 +5,11 @@
         <h1 class="primary-movie-name">{{ $movie->name }}</h1>
         <p class="primary-movie-info"> {{ $movie->release_date }}</p>
         <div class="primary-action">
-            <a href="{{ route('web.movie-watch', $movie->id) }}" class="btn btn-primary btn-lg"><h2>Xem phim</h2></a>
+            @if(auth()->guard('web')->user()->checkMyMovie($movie->id))
+                <a href="{{ route('web.movie-watch', $movie->id) }}" class="btn btn-primary btn-lg"><h2>Xem phim</h2></a>
+            @else
+                <a href="{{ route('web.movie-watch', $movie->id) }}" class="btn btn-success btn-lg"><h2>Mua phim</h2></a>
+            @endif
             @auth('web')
             <form action="{{ route('web.movie-like', $movie->id) }}" method="POST">
                 @csrf

@@ -12,7 +12,9 @@
                         @foreach($trending_movies as $movie)
                             <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-5">
                                 <div class="movie-item">
-                                    @if($movie->price)
+                                    @if(auth()->guard('web')->user()->checkMyMovie($movie->id))
+                                        <div class="badge bg-primary price">Đã mua</div>
+                                    @elseif($movie->price)
                                         <div class="badge bg-success price">{{number_format($movie->price)}}VNĐ</div>
                                     @else
                                         <div class="badge bg-warning price">Miễn phí</div>
@@ -47,7 +49,9 @@
                         <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-5">
                             <div class="movie-item">
                                 <a href="{{ route('web.movie-detail', $movie->id) }}" class="movie-link">
-                                    @if($movie->price)
+                                    @if(auth()->guard('web')->user()->checkMyMovie($movie->id))
+                                        <div class="badge bg-primary price">Đã mua</div>
+                                    @elseif($movie->price)
                                         <div class="badge bg-success price">{{number_format($movie->price)}}VNĐ</div>
                                     @else
                                         <div class="badge bg-warning price">Miễn phí</div>

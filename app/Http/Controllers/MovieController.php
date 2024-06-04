@@ -155,19 +155,16 @@ class MovieController extends Controller
      */
     public function favorites()
     {
-        $favorites = Favorite::where([
-            'customer_id' => Auth::guard('web')->id(),
-        ])->get();
+        $favorites = Auth::guard('web')->user()->favorites;
 
-        foreach ($favorites as $item) {
-            $movieId = $item->movie_id;
-            $movies[] = Http::withToken(env('TMDB_API_TOKEN'))
-                ->get(env('TMDB_BASE_URL') . "/movie/$movieId?language=en-vi-VN")
-                ->json();
+        $movies = [];
+
+        foreach ($favorites as $favorite) {
+            $movies[] = $favorite->movie;
         }
 
         $data = [
-            'data' => $movies,
+            'movies' => $movies,
             'categoryName' => 'Yêu thích',
         ];
 

@@ -11,6 +11,13 @@
                         @foreach($movies as $movie)
                             <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
                                 <div class="movie-item">
+                                    @if(auth()->guard('web')->user()->checkMyMovie($movie->id))
+                                        <div class="badge bg-primary price">Đã mua</div>
+                                    @elseif($movie->price)
+                                        <div class="badge bg-success price">{{number_format($movie->price)}}VNĐ</div>
+                                    @else
+                                        <div class="badge bg-warning price">Miễn phí</div>
+                                    @endif
                                     <a href="{{ route('web.movie-detail', $movie['id']) }}" class="movie-link">
                                         <img src="{{url('/uploads/'.$movie->image)}}" alt=""
                                              class="movie-item__img" loading="lazy"/>

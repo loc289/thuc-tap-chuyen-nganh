@@ -114,6 +114,13 @@
                                 </a>
                             </li>
                             <li>
+                                <a class="user-action" href="{{ route('web.favorites') }}">
+                                    <img src="{{ asset('static/assets/icons/wallet.svg') }}" alt=""
+                                         class="nav-link__logo"/>
+                                    <p>Ví của tôi</p>
+                                </a>
+                            </li>
+                            <li>
                                 <a class="user-action" href="#">
                                     <img src="{{ asset('static/assets/icons/setting.svg') }}" alt=""
                                          class="nav-link__logo"/>
