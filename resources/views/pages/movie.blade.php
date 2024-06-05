@@ -28,7 +28,7 @@
                                 <a href="{{ route('web.movie-watch', $movie->id) }}" class="btn btn-primary btn-lg"><h2>Xem phim</h2></a>
                             @else
                                 <a href="{{ route('web.movie-buy', $movie->id) }}" class="btn btn-success btn-lg" onclick="event.preventDefault();
-   document.getElementById('movie-buy-form-{{$movie->id}}').submit();"><h2>Mua phim</h2></a>
+   document.getElementById('movie-buy-form-{{$movie->id}}').submit();"><h2>Mua phim ({{number_format($movie->price)}} VNĐ)</h2></a>
 
                                 <form id="movie-buy-form-{{$movie->id}}" action="{{ route('web.movie-buy', $movie->id) }}" method="POST"
                                       style="display: none;">
@@ -40,7 +40,7 @@
                                 <form action="{{ route('web.movie-like', $movie->id) }}" method="POST">
                                     @csrf
                                     <button class="primary-save" id="likeButton" type="submit">
-                                        <img src="{{ asset('static/assets/button').(auth()->guard('web')->user()->checkFavorite($movie->id) ? '/liked.svg' : '/like.svg') }}" class="likeImage" alt="Like" />
+                                        <img src="{{ asset('static/assets/button').(auth()->guard('web')->user()->checkFavorite($movie->id) ? '/liked.svg' : '/like.svg') }}" class="likeImage" alt="Like" width="35"/>
                             </button>
                         </form>
                         @else

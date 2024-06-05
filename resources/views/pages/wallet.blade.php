@@ -18,8 +18,7 @@
                             <div class="row mb-3">
                                 <div class="col-12">
                                     <label for="id_amount" class="mb-3">Số tiền (VNĐ)</label>
-                                    <input type="number" name="amount" id="id_amount" value=""
-                                           class="form-control">
+                                    <input type="number" name="amount" id="id_amount" value="" min="0" class="form-control">
                                 </div>
                             </div>
                         </div>

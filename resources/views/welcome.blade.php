@@ -39,6 +39,16 @@
     <title>Watch</title>
 </head>
 
+<style>
+    .form-control {
+        font-size: inherit;
+    }
+
+    .search-container .searchInput {
+        font-size: inherit;
+    }
+</style>
+
 <body>
 {{--    <div class="content">--}}
 <div class="container-fluid">
