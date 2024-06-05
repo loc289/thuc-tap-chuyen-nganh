@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\NationController;
+use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthLoginController;
 use App\Http\Controllers\MovieController;
@@ -30,6 +31,8 @@ Route::prefix('admin')->group(function () {
         Route::resource('categories', CategoryController::class);
         Route::resource('nations', NationController::class);
         Route::resource('movies', AdminMovieController::class);
+
+        Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
     });
     require __DIR__.'/auth.php';
 });

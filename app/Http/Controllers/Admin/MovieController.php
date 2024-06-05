@@ -51,6 +51,7 @@ class MovieController extends Controller
         $movie->duration = request()->duration;
         $movie->category_id = request()->category_id;
         $movie->nation_id = request()->nation_id;
+        $movie->status = request()->status;
         $movie->save();
 
         return redirect()->route('movies.index');

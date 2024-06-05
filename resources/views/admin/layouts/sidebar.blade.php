@@ -22,6 +22,9 @@
                     <a href="{{ route('movies.index') }}" class=" waves-effect">
                         <span>Phim</span>
                     </a>
+                    <a href="{{ route('transactions.index') }}" class=" waves-effect">
+                        <span>Giao dịch</span>
+                    </a>
                 </li>
             </ul>
         </div>
