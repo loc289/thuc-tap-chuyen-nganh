@@ -95,6 +95,9 @@ class AuthLoginController extends Controller
             'username' => $request->username,
             'password' => Hash::make($request->password),
         ]);
+        $customer->wallet()->create([
+            'balance' => 0,
+        ]);
         Auth::guard('web')->login($customer, true);
 
         return redirect('/');
