@@ -65,7 +65,11 @@ Route::middleware(['auth_customer'])->group(function () {
     Route::get('/my_favorite', [MovieController::class, 'favorites'])->name('web.favorites');
     Route::get('/wallet', [WalletController::class, 'show'])->name('web.wallet');
     Route::post('/wallet/top_up', [WalletController::class, 'top_up'])->name('web.wallet-top-up');
+    Route::get('/wallet/top_up/{id}', [WalletController::class, 'top_up_pay'])->name('web.wallet-top-up-pay');
     Route::post('/movies/{id}/buy', [MovieController::class, 'buy'])->name('web.movie-buy');
 });
+
+Route::get('vnpay_return', [WalletController::class, 'vnpay_return'])->name('web.vnpay-return');
+Route::get('vnpay_ipn', [WalletController::class, 'vnpay_ipn'])->name('web.vnpay-ipn');
 
 // Auth::routes();

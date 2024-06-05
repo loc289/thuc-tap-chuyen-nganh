@@ -40,6 +40,7 @@
                             <th scope="col">STT</th>
                             <th scope="col">Số tiền</th>
                             <th scope="col">Ngày giờ nạp</th>
+                            <th scope="col">Trạng thái</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -49,6 +50,16 @@
                                 <th scope="row">{{$loop->index + 1}}</th>
                                 <td>{{number_format($topUp->amount)}} VNĐ</td>
                                 <td>{{$topUp->created_at}}</td>
+                                <td>
+                                    @if($topUp->status == config('constants.top_up_status_pending'))
+                                        <span class="badge bg-warning">Chờ thanh toán</span>
+                                        <a href="{{route('web.wallet-top-up-pay', $topUp->id)}}" class="btn btn-primary"><h5>Thanh toán</h5></a>
+                                    @elseif($topUp->status == config('constants.top_up_status_success'))
+                                        <span class="badge bg-success">Thành công</span>
+                                    @else
+                                        <span class="badge bg-danger">Thất bại</span>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

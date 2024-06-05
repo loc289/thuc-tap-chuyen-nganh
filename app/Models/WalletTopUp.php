@@ -12,5 +12,12 @@ class WalletTopUp extends Model
     protected $fillable = [
         'wallet_id',
         'amount',
+        'status',
+        'payment_info'
     ];
+
+    public function wallet()
+    {
+        return $this->belongsTo(Wallet::class);
+    }
 }
