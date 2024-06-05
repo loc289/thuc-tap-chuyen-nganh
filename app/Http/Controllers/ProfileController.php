@@ -3,14 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Category;
+use App\Models\Customer;
+use App\Models\Nation;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\View;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $nations = Nation::all();
+        View::share('nations', $nations);
+
+        $categories = Category::all();
+        View::share('categories', $categories);
+    }
+
     /**
      * Display the user's profile form.
      */
@@ -56,5 +69,26 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function profile_settings()
+    {
+        return view('pages.setting', [
+            'user' => Auth::guard('web')->user(),
+        ]);
+    }
+
+    public function update_profile()
+    {
+        $current_user = Auth::guard('web')->user();
+
+        $current_user->name = request()->name;
+        $current_user->email = request()->email;
+        $current_user->username = request()->username;
+        $current_user->password = request()->password ? Hash::make(request()->password) : $current_user->password;
+
+        $current_user->save();
+
+        return redirect()->route('web.profile-settings')->with('success', 'Cập nhật thông tin thành công.');
     }
 }

@@ -123,7 +123,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="user-action" href="#">
+                                <a class="user-action" href="{{route('web.profile-settings')}}">
                                     <img src="{{ asset('static/assets/icons/setting.svg') }}" alt=""
                                          class="nav-link__logo"/>
                                     Cài đặt

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\NationController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthLoginController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WalletController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
@@ -67,6 +68,8 @@ Route::middleware(['auth_customer'])->group(function () {
     Route::post('/wallet/top_up', [WalletController::class, 'top_up'])->name('web.wallet-top-up');
     Route::get('/wallet/top_up/{id}', [WalletController::class, 'top_up_pay'])->name('web.wallet-top-up-pay');
     Route::post('/movies/{id}/buy', [MovieController::class, 'buy'])->name('web.movie-buy');
+    Route::get('/profile_settings', [ProfileController::class, 'profile_settings'])->name('web.profile-settings');
+    Route::post('/update_profile', [ProfileController::class, 'update_profile'])->name('web.update-profile');
 });
 
 Route::get('vnpay_return', [WalletController::class, 'vnpay_return'])->name('web.vnpay-return');
