@@ -95,9 +95,11 @@
                     </button>
                 </form>
 
-                <a href="#!" class="top-act__noti">
-                    <img src="{{ asset('static/assets/icons/bell.svg') }}" alt=""/>
-                </a>
+{{--                <a href="#!" class="top-act__noti">--}}
+{{--                    <img src="{{ asset('static/assets/icons/bell.svg') }}" alt=""/>--}}
+{{--                </a>--}}
+
+                <h4>Số dư trong ví: {{number_format(auth()->guard('web')->user()->wallet->balance)}} VNĐ</h4>
 
                 <ul class="top-list top-list-user">
                     <li>
@@ -114,7 +116,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="user-action" href="{{ route('web.favorites') }}">
+                                <a class="user-action" href="{{ route('web.wallet') }}">
                                     <img src="{{ asset('static/assets/icons/wallet.svg') }}" alt=""
                                          class="nav-link__logo"/>
                                     <p>Ví của tôi</p>

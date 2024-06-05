@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-    <main class="main-content" style="margin-top: 80px;">
+    <main class="main-content">
         <section class="feature">
             <h2 class="feature-heading">{{ $categoryName }}</h2>
             <div class="carousel row swiper-container swiper">
@@ -11,7 +11,7 @@
                         @foreach($movies as $movie)
                             <div class="swiper-slide col-lg-3 col-md-4 col-sm-6 mb-4">
                                 <div class="movie-item">
-                                    @if(auth()->guard('web')->user()->checkMyMovie($movie->id))
+                                    @if(auth()->guard('web')->check() && auth()->guard('web')->user()->checkMyMovie($movie->id))
                                         <div class="badge bg-primary price">Đã mua</div>
                                     @elseif($movie->price)
                                         <div class="badge bg-success price">{{number_format($movie->price)}}VNĐ</div>

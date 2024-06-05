@@ -8,6 +8,7 @@ use App\Models\Movie;
 use App\Models\Nation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\View;
 
@@ -118,6 +119,19 @@ class MovieController extends Controller
     {
         $movie = Movie::find($id);
 
+        if (Auth::guard('web')->check()) {
+            $checkMyMovie = Auth::guard('web')->user()->checkMyMovie($id);
+            $error = 'Bạn chưa mua phim này. Vui lòng mua phim để xem.';
+        } else {
+            $checkMyMovie = false;
+            $error = 'Bạn chưa mua phim này. Vui lòng đăng nhập để mua phim.';
+        }
+
+        if (!$checkMyMovie) {
+            request()->session()->flash('error', $error);
+            return redirect()->route('web.movie-detail', ['id' => $id]);
+        }
+
         $data = [
             'movie' => $movie,
         ];
@@ -169,5 +183,36 @@ class MovieController extends Controller
         ];
 
         return view('pages.category', $data);
+    }
+
+    public function buy(int $id)
+    {
+        $movie = Movie::find($id);
+        $customer = Auth::guard('web')->user();
+
+        if ($customer->wallet->balance < $movie->price) {
+            request()->session()->flash('error', 'Số dư trong ví không đủ để mua phim này.');
+            return redirect()->route('web.movie-detail', ['id' => $id]);
+        }
+
+        // start transaction to update wallet and create order
+        DB::transaction(function () use ($movie, $customer) {
+            $charge_id = $customer->wallet->charges()->create([
+                'amount' => $movie->price,
+            ]);
+
+            $customer->orders()->create([
+                'movie_id' => $movie->id,
+                'wallet_charge_id' => $charge_id->id,
+            ]);
+
+            $customer->wallet->balance -= $movie->price;
+            $customer->wallet->save();
+        });
+
+
+        request()->session()->flash('success', 'Mua phim thành công.');
+
+        return redirect()->route('web.movie-detail', ['id' => $id]);
     }
 }

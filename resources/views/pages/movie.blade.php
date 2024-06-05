@@ -1,12 +1,12 @@
 @extends('welcome')
 @section('content')
-    <div class="movie mt-header">
+    <div class="movie mt-header mb-4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-4">
                     <img src="{{url('/uploads/'.$movie->image)}}" alt="" class="movie__main--img">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-4">
                     <div class="movie__detail">
                         <div class="row-1">
                             <h2 class="movie__name">{{ $movie->name }}</h2>
@@ -24,7 +24,17 @@
                             <p class="movie__desc">{{ $movie->description }}</p>
                         </div>
                         <div class="primary-action mb-4">
-                            <a href="{{ route('web.movie-watch', $movie->id) }}" class="btn btn-primary btn-lg"><h2>Xem phim</h2></a>
+                            @if(auth()->guard('web')->check() && auth()->guard('web')->user()->checkMyMovie($movie->id))
+                                <a href="{{ route('web.movie-watch', $movie->id) }}" class="btn btn-primary btn-lg"><h2>Xem phim</h2></a>
+                            @else
+                                <a href="{{ route('web.movie-buy', $movie->id) }}" class="btn btn-success btn-lg" onclick="event.preventDefault();
+   document.getElementById('movie-buy-form-{{$movie->id}}').submit();"><h2>Mua phim</h2></a>
+
+                                <form id="movie-buy-form-{{$movie->id}}" action="{{ route('web.movie-buy', $movie->id) }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            @endif
 
                             @auth('web')
                                 <form action="{{ route('web.movie-like', $movie->id) }}" method="POST">

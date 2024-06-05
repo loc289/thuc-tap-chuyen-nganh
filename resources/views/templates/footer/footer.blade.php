@@ -2,7 +2,7 @@
     <div class="footer__inner">
         <div class="footer__left">
             <a href="#!" class="logo">
-                <img src="./static/assets/icons/logo.svg" alt="" class="logo__img" />
+                <img src="{{url('/static/assets/icons/logo.svg')}}" alt="" class="logo__img" />
             </a>
             <p class="footer__intro">
                 <a href="/web.html">Watch</a> - Trang xem phim Online với giao diện mới được bố trí và thiết kế thân

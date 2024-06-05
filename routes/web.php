@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\NationController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthLoginController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\WalletController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MovieController as AdminMovieController;
@@ -58,7 +59,13 @@ Route::get('/categories/{id}/movies', [MovieController::class, 'category'])->nam
 Route::get('/nations/{id}/movies', [MovieController::class, 'nation'])->name('web.movie-nation');
 Route::get('/search', [MovieController::class, 'search'])->name('web.movie-search');
 Route::get('/movies/{id}/watch', [MovieController::class, 'watch'])->name('web.movie-watch');
-Route::post('/movies/{id}/favorite', [MovieController::class, 'like'])->name('web.movie-like');
-Route::get('/my_favorite', [MovieController::class, 'favorites'])->name('web.favorites');
+
+Route::middleware(['auth_customer'])->group(function () {
+    Route::post('/movies/{id}/favorite', [MovieController::class, 'like'])->name('web.movie-like');
+    Route::get('/my_favorite', [MovieController::class, 'favorites'])->name('web.favorites');
+    Route::get('/wallet', [WalletController::class, 'show'])->name('web.wallet');
+    Route::post('/wallet/top_up', [WalletController::class, 'top_up'])->name('web.wallet-top-up');
+    Route::post('/movies/{id}/buy', [MovieController::class, 'buy'])->name('web.movie-buy');
+});
 
 // Auth::routes();

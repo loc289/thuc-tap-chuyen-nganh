@@ -776,7 +776,7 @@ input:checked + .toggle:after {
 
 .footer-main {
   border-top: var(--border-footer) 1px solid;
-  padding: 40px 100px;
+  padding: 20px 40px;
 }
 .footer__inner {
   display: flex;
@@ -828,4 +828,10 @@ input:checked + .toggle:after {
 .user-action {
   display: flex;
   align-items: center;
+}
+
+.alert-area {
+  position: absolute;
+  right: 20px;
+  top: 66px;
 }

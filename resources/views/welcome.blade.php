@@ -42,6 +42,18 @@
 <body>
 {{--    <div class="content">--}}
 <div class="container-fluid">
+    <div class="alert-area">
+        @if(!is_null(Session::get('success')))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+        @if(!is_null(Session::get('error')))
+            <div class="alert alert-danger">
+                {{ Session::get('error') }}
+            </div>
+        @endif
+    </div>
     @auth('web')
         @include('templates.header.logInHeader')
         <!-- Main-Content for logged-in users -->

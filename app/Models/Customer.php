@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Customer extends Authenticatable
@@ -44,5 +45,20 @@ class Customer extends Authenticatable
     public function checkMyMovie($movie_id): bool
     {
         return $this->movies->where('id', $movie_id)->isNotEmpty();
+    }
+
+    public function wallet(): HasOne
+    {
+        return $this->hasOne(Wallet::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function wallet_charges(): HasManyThrough
+    {
+        return $this->hasManyThrough(WalletCharge::class, Wallet::class);
     }
 }
