@@ -206,7 +206,6 @@ class WalletController extends Controller
         $startTime = date('YmdHis');
         $vnp_HashSecret = config('vnpay.vnp_HashSecret');
         $vnp_TxnRef = implode('_', [$startTime, rand(1, 10000), $top_up->id]);
-
         $inputData = array(
             "vnp_Version" => "2.1.1",
             "vnp_TmnCode" => config('vnpay.vnp_TmnCode'),
@@ -249,5 +248,3 @@ class WalletController extends Controller
         return $vnp_Url;
     }
 }
-
-

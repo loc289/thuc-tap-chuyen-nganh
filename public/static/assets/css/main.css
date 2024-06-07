@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/
+/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -87,8 +87,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  /*font-size: 100%;*/
-  /*font: inherit;*/
   vertical-align: baseline;
 }
 
@@ -284,7 +282,6 @@ html {
 }
 .movie__detail {
   width: 533px;
-  /*margin-top: 75px;*/
 }
 .movie__name {
   font-size: 3.2rem;
@@ -321,43 +318,9 @@ html {
   margin-bottom: 43px;
 }
 
-/*.dropdown {*/
-/*  position: relative;*/
-/*  display: inline-block;*/
-/*}*/
-/*.dropdown-toggle {*/
-/*  cursor: pointer;*/
-/*}*/
 .dropdown-toggle::after {
   content: none;
 }
-/*.dropdown-menu {*/
-/*  display: none;*/
-/*  position: absolute;*/
-/*  top: 130%;*/
-/*  left: -149px;*/
-/*  background-color: var(--dropdown-bg-color);*/
-/*  min-width: 160px;*/
-/*  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);*/
-/*  animation-duration: 1.25s;*/
-/*  padding: 0;*/
-/*  color: #000;*/
-/*}*/
-/*.dropdown-menu::before {*/
-/*  content: "";*/
-/*  position: absolute;*/
-/*  top: -19px;*/
-/*  border: 12.5px solid;*/
-/*  border-color: transparent transparent var(--dropdown-bg-color) transparent;*/
-/*  right: 1px;*/
-/*}*/
-/*.dropdown-menu > li > a {*/
-/*  padding: 12px 20px;*/
-/*  font-size: 1.4rem;*/
-/*}*/
-/*.dropdown:hover .dropdown-menu {*/
-/*  display: block;*/
-/*}*/
 
 .login__register, .login__google, .login__check-group, .login__check {
   display: flex;
@@ -476,6 +439,15 @@ html {
   color: #6a5af9;
 }
 
+.login__input:not(:placeholder-shown) + .login__label {
+  top: 0;
+  left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #fff;
+  color: #6a5af9;
+}
+
 input[type=checkbox] {
   height: 0;
   width: 0;
@@ -569,6 +541,21 @@ input:checked + .toggle:after {
   transform: rotate(135deg);
 }
 
+.btn {
+  background-color: #fff !important;
+  color: #000 !important;
+  padding: 12px 15px !important;
+  transition: opacity 0.25s linear;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+.likeImage {
+  height: 49px;
+  width: 49px;
+}
+
 .top-act__user, .top-act__group, .top-list, .top-bar {
   display: flex;
   align-items: center;
@@ -597,9 +584,6 @@ input:checked + .toggle:after {
   z-index: 10;
   background-color: var(--bg-color);
 }
-/*.header.scrolled {*/
-/*  background-color: var(--bg-color);*/
-/*}*/
 
 .banner {
   position: relative;
@@ -618,6 +602,15 @@ input:checked + .toggle:after {
   height: 455px;
   background-size: cover;
 }
+.banner-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
 .banner-slide:first-child {
   display: block;
 }
@@ -628,47 +621,37 @@ input:checked + .toggle:after {
 .banner-slide:first-child, .banner_inner:first-child {
   display: block;
 }
-.banner-slide:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-}
 
 .top-bar {
   justify-content: space-between;
 }
 
-
 .top-list {
-    position: relative;
-    gap: 32px;
+  position: relative;
+  gap: 32px;
 }
 
-.top-list li:hover ul{
-    display: grid;
+.top-list li:hover ul {
+  display: grid;
 }
 
-.top-list.top-list-user li:hover ul{
-    display: flex;
-    flex-direction: column;
+.top-list.top-list-user li:hover ul {
+  display: flex;
+  flex-direction: column;
 }
 
 .top-list ul {
-    position: absolute;
-    left: 0;
-    grid-gap: 25px;
-    display: none;
-    grid-template-columns: repeat(7, 1fr);
-    background-color: #23201d;
-    padding: 20px;
+  position: absolute;
+  left: 0;
+  grid-gap: 25px;
+  display: none;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #23201d;
+  padding: 20px;
 }
 
 .top-list ul li {
-    width: max-content;
+  width: max-content;
 }
 
 .top-link {
@@ -716,6 +699,23 @@ input:checked + .toggle:after {
   width: 22px;
 }
 
+.price {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.user-action {
+  display: flex;
+  align-items: center;
+}
+
+.alert-area {
+  position: absolute;
+  right: 20px;
+  top: 66px;
+}
+
 .primary-movie-name {
   font-size: 4.8rem;
   font-weight: 600;
@@ -726,8 +726,8 @@ input:checked + .toggle:after {
 }
 .primary-action {
   display: flex;
-  align-items: center;
   margin-top: 36px;
+  align-items: center;
   gap: 20px;
 }
 
@@ -818,20 +818,3 @@ input:checked + .toggle:after {
 }
 
 /*# sourceMappingURL=main.css.map */
-
-.price {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.user-action {
-  display: flex;
-  align-items: center;
-}
-
-.alert-area {
-  position: absolute;
-  right: 20px;
-  top: 66px;
-}

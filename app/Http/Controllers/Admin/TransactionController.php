@@ -25,14 +25,13 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $wallets = Wallet::all();
 
         $total_income = 0;
 
-        foreach ($wallets as $wallet) {
-            $total_income += $wallet->balance;
+        $all_top_ups = WalletTopUp::all()->where('status', config('constants.top_up_status_success'));
+        foreach($all_top_ups as $top_up){
+            $total_income += $top_up->amount;
         }
-
         $top_ups = WalletTopUp::paginate(config('view.default_pagination'));
 
         $data = [

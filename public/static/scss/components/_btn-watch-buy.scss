@@ -1,0 +1,13 @@
+.btn {
+    background-color: #fff !important;
+    color: #000 !important;
+    padding: 12px 15px !important;
+    transition: opacity 0.25s linear;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.likeImage {
+    height: 49px;
+    width: 49px;
+}

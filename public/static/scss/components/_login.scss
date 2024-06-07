@@ -121,6 +121,14 @@
         color: #6a5af9;
     }
 }
+.login__input:not(:placeholder-shown) + .login__label {
+    top: 0;
+    left: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #fff;
+    color: #6a5af9;
+}
 
 input[type="checkbox"] {
     height: 0;

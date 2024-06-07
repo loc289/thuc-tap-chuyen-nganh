@@ -23,14 +23,8 @@ $margin-main: 32px;
     }
 }
 .header {
-    position: fixed;
-    width: 83%;
     z-index: 10;
-    transition: background-color 0.2s;
-
-    &.scrolled {
-        background-color: var(--bg-color);
-    }
+    background-color: var(--bg-color);
 }
 .banner {
     position: relative;
@@ -47,7 +41,15 @@ $margin-main: 32px;
     &-slide {
         height: 455px;
         background-size: cover;
-
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
         &:first-child {
             display: block;
         }
@@ -65,17 +67,38 @@ $margin-main: 32px;
 .top-bar {
     @extend %flexItemCenter;
     justify-content: space-between;
-    margin-left: $margin-main;
-    margin-right: $margin-main;
 }
 .top-list {
+    position: relative;
     @extend %flexItemCenter;
     gap: 32px;
+}
+.top-list li:hover ul {
+    display: grid;
+}
+
+.top-list.top-list-user li:hover ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-list ul {
+    position: absolute;
+    left: 0;
+    grid-gap: 25px;
+    display: none;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #23201d;
+    padding: 20px;
+}
+
+.top-list ul li {
+    width: max-content;
 }
 .top-link {
     font-weight: 500;
     line-height: 1.12;
-    padding: 32px 0px;
+    padding: 15px 0px;
 }
 
 .top-act {
@@ -121,6 +144,23 @@ $margin-main: 32px;
         }
     }
 }
+.price {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.user-action {
+    display: flex;
+    align-items: center;
+}
+
+.alert-area {
+    position: absolute;
+    right: 20px;
+    top: 66px;
+}
+
 .primary {
     &-movie-name {
         font-size: 4.8rem;
@@ -133,6 +173,7 @@ $margin-main: 32px;
     &-action {
         display: flex;
         margin-top: 36px;
+        align-items: center;
         gap: 20px;
     }
 }
