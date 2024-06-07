@@ -119,17 +119,19 @@ class MovieController extends Controller
     {
         $movie = Movie::find($id);
 
-        if (Auth::guard('web')->check()) {
-            $checkMyMovie = Auth::guard('web')->user()->checkMyMovie($id);
-            $error = 'Bạn chưa mua phim này. Vui lòng mua phim để xem.';
-        } else {
-            $checkMyMovie = false;
-            $error = 'Bạn chưa mua phim này. Vui lòng đăng nhập để mua phim.';
-        }
+        if (!empty($movie->price)) {
+            if (Auth::guard('web')->check()) {
+                $checkMyMovie = Auth::guard('web')->user()->checkMyMovie($id);
+                $error = 'Bạn chưa mua phim này. Vui lòng mua phim để xem.';
+            } else {
+                $checkMyMovie = false;
+                $error = 'Bạn chưa mua phim này. Vui lòng đăng nhập để mua phim.';
+            }
 
-        if (!$checkMyMovie) {
-            request()->session()->flash('error', $error);
-            return redirect()->route('web.movie-detail', ['id' => $id]);
+            if (!$checkMyMovie) {
+                request()->session()->flash('error', $error);
+                return redirect()->route('web.movie-detail', ['id' => $id]);
+            }
         }
 
         $data = [

@@ -18,6 +18,6 @@ class AuthenticateCustomer
             return $next($request);
         }
 
-        return redirect('web.login');
+        return redirect()->route('web.login');
     }
 }
